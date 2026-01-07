@@ -211,8 +211,12 @@ class TestPythonGUI:
         )
         # Nie packujemy jeszcze - będzie pokazane tylko gdy jest kod
         
+        # Frame dla kodu z scrollbarem
+        self.code_frame = Frame(self.frame_question, bg=COLOR_BG)
+        # Nie packujemy jeszcze - będzie pokazane tylko gdy jest kod
+        
         self.text_code = Text(
-            self.frame_question,
+            self.code_frame,
             wrap='none',  # Brak zawijania dla kodu
             font=font.Font(family='Consolas', size=10),
             bg="#2B2B2B",  # Ciemne tło jak w edytorze
@@ -223,8 +227,24 @@ class TestPythonGUI:
             pady=15,
             insertbackground="#FFFFFF"  # Kolor kursora
         )
+        
+        # Scrollbar dla pola kodu
+        self.code_scrollbar = Scrollbar(
+            self.code_frame,
+            orient="vertical",
+            command=self.text_code.yview,
+            bg="#404040",
+            troughcolor="#1E1E1E",
+            activebackground="#606060",
+            width=12
+        )
+        self.text_code.configure(yscrollcommand=self.code_scrollbar.set)
         self.text_code.config(state='disabled')
-        # Nie packujemy jeszcze - będzie pokazane tylko gdy jest kod
+        
+        # Pakowanie scrollbara i tekstu
+        self.text_code.pack(side="left", fill="both", expand=True)
+        self.code_scrollbar.pack(side="right", fill="y")
+        # Nie packujemy code_frame jeszcze - będzie pokazane tylko gdy jest kod
         
         # Odpowiedzi (radio buttons)
         self.frame_answers = Frame(self.frame_question, bg=COLOR_BG)
@@ -435,7 +455,7 @@ class TestPythonGUI:
         self.text_explanation.config(state='disabled')
         
         # Ukryj pole kodu domyślnie
-        self.text_code.pack_forget()
+        self.code_frame.pack_forget()
         self.code_label.pack_forget()
         
         # Sprawdź czy jest kod w pytaniu
@@ -462,8 +482,15 @@ class TestPythonGUI:
                 self.text_code.config(state='normal')
                 self.text_code.delete(1.0, 'end')
                 self.text_code.insert(1.0, code_snippet)
+                
+                # Ustaw dynamiczną wysokość na podstawie liczby linii (min 8, max 25 linii)
+                num_lines = code_snippet.count('\n') + 1
+                code_height = max(8, min(25, num_lines + 2))  # +2 dla marginesu
+                self.text_code.config(height=code_height)
+                
                 self.text_code.config(state='disabled')
-                self.text_code.pack(fill='both', expand=True, pady=(0, 15), before=self.frame_answers)
+                # Pakuj frame z kodem i scrollbarem
+                self.code_frame.pack(fill='both', expand=True, pady=(0, 15), before=self.frame_answers)
         else:
             # Pytanie bez kodu
             typ_emoji = "💻" if question['typ'] == 'kod' else "📖"
@@ -660,7 +687,7 @@ Czas: {int(duration // 60)} min {int(duration % 60)} sek
         self.text_code.config(state='normal')
         self.text_code.delete(1.0, 'end')
         self.text_code.config(state='disabled')
-        self.text_code.pack_forget()
+        self.code_frame.pack_forget()
         self.code_label.pack_forget()
         
         for rb in self.radio_buttons:
