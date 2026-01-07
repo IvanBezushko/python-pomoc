@@ -483,10 +483,15 @@ class TestPythonGUI:
                 self.text_code.delete(1.0, 'end')
                 self.text_code.insert(1.0, code_snippet)
                 
-                # Ustaw dynamiczną wysokość na podstawie liczby linii (min 8, max 25 linii)
+                # Ustaw dynamiczną wysokość na podstawie liczby linii (min 10, max 35 linii)
+                # Zwiększamy maksymalną wysokość, aby pokazać więcej kodu na raz
                 num_lines = code_snippet.count('\n') + 1
-                code_height = max(8, min(25, num_lines + 2))  # +2 dla marginesu
+                code_height = max(10, min(35, num_lines + 3))  # +3 dla marginesu, max 35 linii
                 self.text_code.config(height=code_height)
+                
+                # Jeśli kod jest dłuższy niż maksymalna wysokość, scrollbar będzie widoczny
+                # Przewiń na górę, aby pokazać początek kodu
+                self.text_code.see("1.0")
                 
                 self.text_code.config(state='disabled')
                 # Pakuj frame z kodem i scrollbarem
