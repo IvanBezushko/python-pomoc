@@ -17,7 +17,7 @@ Program do testowania wiedzy z Pythona z przyjaznym interfejsem graficznym. Zawi
 
 ### Windows
 ```bash
-py test_python_gui.py
+py -3 test_python_gui.py
 ```
 
 ### Linux/Mac
@@ -95,4 +95,5 @@ Możesz edytować `test_python_baza_pytan.json` aby dodać własne pytania!
 ---
 
 **Powodzenia na zaliczeniu! 🍀**
+
 
