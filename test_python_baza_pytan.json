@@ -1,0 +1,1563 @@
+[
+  {
+    "id": 1,
+    "typ": "teoria",
+    "pytanie": "Co oznacza `self` w metodach klasy Pythona?",
+    "odpowiedzi": [
+      "Referencja do bieżącego obiektu klasy",
+      "Referencja do klasy bazowej",
+      "Zmienna globalna",
+      "Klasa nadrzędna"
+    ],
+    "prawidlowa": 0,
+    "tlumaczenie": "`self` to referencja do bieżącej instancji obiektu. Umożliwia dostęp do atrybutów i metod tego obiektu wewnątrz klasy."
+  },
+  {
+    "id": 2,
+    "typ": "kod",
+    "pytanie": "Co wyświetli poniższy kod?\n```python\nclass Klasa:\n    def __init__(self, x):\n        self.x = x\n    def __str__(self):\n        return f\"Wartosc: {self.x}\"\n\nobj = Klasa(42)\nprint(obj)\n```",
+    "odpowiedzi": [
+      "Wartosc: 42",
+      "Klasa(42)",
+      "Błąd",
+      "42"
+    ],
+    "prawidlowa": 0,
+    "tlumaczenie": "Metoda `__str__` definiuje reprezentację tekstową obiektu. `print(obj)` wywołuje `__str__`, więc wyświetli się 'Wartosc: 42'."
+  },
+  {
+    "id": 3,
+    "typ": "teoria",
+    "pytanie": "Która metoda specjalna jest wywoływana przy tworzeniu obiektu?",
+    "odpowiedzi": [
+      "__init__",
+      "__str__",
+      "__new__",
+      "__del__"
+    ],
+    "prawidlowa": 0,
+    "tlumaczenie": "`__init__` to konstruktor klasy, wywoływany automatycznie przy tworzeniu obiektu (np. `Klasa()`). Inicjalizuje atrybuty obiektu."
+  },
+  {
+    "id": 4,
+    "typ": "kod",
+    "pytanie": "Co się stanie po wykonaniu tego kodu?\n```python\ntry:\n    wynik = 10 / 0\nexcept ZeroDivisionError:\n    print(\"Blad\")\nfinally:\n    print(\"Koniec\")\n```",
+    "odpowiedzi": [
+      "Wyświetli: Blad\\nKoniec",
+      "Wyświetli: Koniec",
+      "Program się zawiesi",
+      "Brak wyjścia"
+    ],
+    "prawidlowa": 0,
+    "tlumaczenie": "Dzielenie przez zero (`10/0`) rzuca `ZeroDivisionError`, który jest przechwytywany przez `except`. Blok `finally` wykonuje się zawsze, niezależnie od wyjątku."
+  },
+  {
+    "id": 5,
+    "typ": "teoria",
+    "pytanie": "Który operator logiczny w Pythonie odpowiada spójnikowi \"i\"?",
+    "odpowiedzi": [
+      "and",
+      "or",
+      "&",
+      "&&"
+    ],
+    "prawidlowa": 0,
+    "tlumaczenie": "W Pythonie operator `and` odpowiada logicznemu \"i\". `or` to \"lub\", a `&` i `&&` to operatory bitowe (inne języki używają `&&`, ale Python używa `and`)."
+  },
+  {
+    "id": 6,
+    "typ": "kod",
+    "pytanie": "Jaka jest wartość zmiennej `x` po wykonaniu?\n```python\nx = 10 // 3\n```",
+    "odpowiedzi": [
+      "3",
+      "3.33",
+      "1",
+      "4"
+    ],
+    "prawidlowa": 0,
+    "tlumaczenie": "Operator `//` to dzielenie całkowite (floor division). `10 // 3 = 3` (część całkowita z dzielenia). Zwróć uwagę: `10 / 3 = 3.33...`, ale `10 // 3 = 3`."
+  },
+  {
+    "id": 7,
+    "typ": "teoria",
+    "pytanie": "Czy w Pythonie `array` i `matrix` to to samo, jeśli chodzi o definicję?",
+    "odpowiedzi": [
+      "Nie, to są różne struktury",
+      "Tak, to synonimy",
+      "Tylko w NumPy",
+      "Zależy od wersji Pythona"
+    ],
+    "prawidlowa": 0,
+    "tlumaczenie": "W Pythonie `array` (tablica NumPy) i `matrix` (macierz NumPy) to różne struktury. `array` jest bardziej uniwersalne, `matrix` to specjalna klasa 2D z innymi operacjami (np. `*` to mnożenie macierzy, nie elementowe)."
+  },
+  {
+    "id": 8,
+    "typ": "kod",
+    "pytanie": "Co wyświetli ten kod?\n```python\nclass Zwierze:\n    def dzwiek(self):\n        return \"Dzwiek\"\n\nclass Pies(Zwierze):\n    def dzwiek(self):\n        return \"Hau!\"\n\nz = Pies()\nprint(z.dzwiek())\n```",
+    "odpowiedzi": [
+      "Hau!",
+      "Dzwiek",
+      "Błąd",
+      "None"
+    ],
+    "prawidlowa": 0,
+    "tlumaczenie": "Klasa `Pies` dziedziczy po `Zwierze` i nadpisuje metodę `dzwiek()`. Wywołanie `z.dzwiek()` używa metody z klasy `Pies`, nie z klasy bazowej (polimorfizm)."
+  },
+  {
+    "id": 9,
+    "typ": "teoria",
+    "pytanie": "Który moduł udostępnia zaawansowane funkcje numeryczne (np. całkowanie, optymalizacja)?",
+    "odpowiedzi": [
+      "SciPy",
+      "NumPy",
+      "math",
+      "random"
+    ],
+    "prawidlowa": 0,
+    "tlumaczenie": "SciPy (Scientific Python) zawiera zaawansowane funkcje numeryczne: całkowanie, optymalizację, statystyki, przetwarzanie sygnałów. NumPy to podstawowe tablice, `math` to podstawowe funkcje matematyczne."
+  },
+  {
+    "id": 10,
+    "typ": "kod",
+    "pytanie": "Co zwróci ten kod?\n```python\nimport numpy as np\narr = np.array([1, 2, 3])\nprint(arr * 2)\n```",
+    "odpowiedzi": [
+      "[2 4 6]",
+      "[1, 2, 3, 1, 2, 3]",
+      "Błąd",
+      "2"
+    ],
+    "prawidlowa": 0,
+    "tlumaczenie": "W NumPy operacje są wykonywane element-po-element. `arr * 2` mnoży każdy element przez 2, więc `[1,2,3] * 2 = [2,4,6]`. To różni się od list Pythona (tam `* 2` by powielało listę)."
+  },
+  {
+    "id": 11,
+    "typ": "teoria",
+    "pytanie": "Czy w języku Python możliwa jest realizacja TDD (Test Driven Development)?",
+    "odpowiedzi": [
+      "Tak",
+      "Nie",
+      "Tylko z dodatkowymi bibliotekami",
+      "Tylko w wersji 3.8+"
+    ],
+    "prawidlowa": 0,
+    "tlumaczenie": "Tak, Python ma wbudowany moduł `unittest` oraz popularne biblioteki jak `pytest`. TDD jest szeroko stosowane w Pythonie."
+  },
+  {
+    "id": 12,
+    "typ": "kod",
+    "pytanie": "Jaki będzie wynik?\n```python\ndef fun(a, b=10, *args, **kwargs):\n    return len(args) + len(kwargs)\n\nprint(fun(1, 2, 3, 4, x=5, y=6))\n```",
+    "odpowiedzi": [
+      "4",
+      "6",
+      "2",
+      "Błąd"
+    ],
+    "prawidlowa": 0,
+    "tlumaczenie": "`*args` przechwytuje dodatkowe pozycyjne argumenty: `(3, 4)` → len=2. `**kwargs` przechwytuje nazwane: `{'x':5, 'y':6}` → len=2. Razem: 2+2=4."
+  },
+  {
+    "id": 13,
+    "typ": "teoria",
+    "pytanie": "Która z poniższych nazw jest nazwą jednego z typowych frameworków webowych w Pythonie?",
+    "odpowiedzi": [
+      "Flask",
+      "React",
+      "Angular",
+      "Vue"
+    ],
+    "prawidlowa": 0,
+    "tlumaczenie": "Flask i Django to popularne frameworki webowe w Pythonie. React, Angular i Vue to frameworki JavaScript (frontend)."
+  },
+  {
+    "id": 14,
+    "typ": "kod",
+    "pytanie": "Co się stanie?\n```python\nimport threading\n\ndef zadanie():\n    print(\"Watek\")\n\nif __name__ == \"__main__\":\n    t = threading.Thread(target=zadanie)\n    t.start()\n    t.join()\n    print(\"Koniec\")\n```",
+    "odpowiedzi": [
+      "Wyświetli: Watek\\nKoniec",
+      "Wyświetli: Koniec\\nWatek",
+      "Błąd",
+      "Wyświetli tylko: Koniec"
+    ],
+    "prawidlowa": 0,
+    "tlumaczenie": "Wątek zostaje uruchomiony (`start()`), a `join()` czeka na jego zakończenie. Najpierw wykona się `zadanie()` (drukuje \"Watek\"), potem kod główny (\"Koniec\")."
+  },
+  {
+    "id": 15,
+    "typ": "teoria",
+    "pytanie": "Czy w Pythonie istnieje obiekt `Cursor`?",
+    "odpowiedzi": [
+      "Tak, w kontekście baz danych",
+      "Nie, nie istnieje",
+      "Tylko w Python 2",
+      "Tylko z zewnętrznymi bibliotekami"
+    ],
+    "prawidlowa": 0,
+    "tlumaczenie": "Obiekt `Cursor` istnieje w modułach do pracy z bazami danych (np. `sqlite3`, `mysql.connector`). Reprezentuje kursor do wykonywania zapytań SQL i pobierania wyników."
+  },
+  {
+    "id": 16,
+    "typ": "kod",
+    "pytanie": "Jaki będzie wynik?\n```python\na = [1, 2, 3]\nb = [1, 2, 3]\nc = a\n\nprint(a == b, a is b, a is c)\n```",
+    "odpowiedzi": [
+      "True False True",
+      "True True True",
+      "False False False",
+      "True True False"
+    ],
+    "prawidlowa": 0,
+    "tlumaczenie": "`==` porównuje wartości: `a == b` → True (te same elementy). `is` porównuje tożsamość obiektów: `a is b` → False (różne obiekty w pamięci), `a is c` → True (ten sam obiekt)."
+  },
+  {
+    "id": 17,
+    "typ": "teoria",
+    "pytanie": "Która instrukcja służy do programowania aplikacji webowych w Pythonie?",
+    "odpowiedzi": [
+      "@app.route()",
+      "@web.route()",
+      "@http.route()",
+      "@server.route()"
+    ],
+    "prawidlowa": 0,
+    "tlumaczenie": "`@app.route()` to dekorator używany w Flasku do definiowania tras (URL). `app` to instancja klasy `Flask`."
+  },
+  {
+    "id": 18,
+    "typ": "kod",
+    "pytanie": "Co zostanie zapisane do pliku?\n```python\nwith open(\"test.txt\", \"w\") as f:\n    f.write(\"Linia1\\n\")\n    f.write(\"Linia2\")\n```",
+    "odpowiedzi": [
+      "Linia1\\nLinia2",
+      "Linia1Linia2",
+      "Błąd - plik nie istnieje",
+      "Nic - plik jest tylko otwarty"
+    ],
+    "prawidlowa": 0,
+    "tlumaczenie": "Tryb `\"w\"` tworzy lub nadpisuje plik. `write()` zapisuje tekst dokładnie tak, jak podano (łącznie z `\\n`). Po wyjściu z `with`, plik jest automatycznie zamknięty i dane zapisane."
+  },
+  {
+    "id": 19,
+    "typ": "teoria",
+    "pytanie": "Co robi blok `finally` w obsłudze wyjątków?",
+    "odpowiedzi": [
+      "Wykonuje się zawsze, niezależnie od wyjątku",
+      "Wykonuje się tylko gdy wystąpi wyjątek",
+      "Wykonuje się tylko gdy nie ma wyjątku",
+      "Nie istnieje w Pythonie"
+    ],
+    "prawidlowa": 0,
+    "tlumaczenie": "Blok `finally` wykonuje się zawsze - zarówno gdy wystąpi wyjątek, jak i gdy nie wystąpi. Używany do sprzątania (np. zamykanie plików, połączeń)."
+  },
+  {
+    "id": 20,
+    "typ": "kod",
+    "pytanie": "Co zwróci ten kod?\n```python\nimport json\n\ndane = {\"a\": 1, \"b\": 2}\njson_str = json.dumps(dane)\nprint(type(json_str))\n```",
+    "odpowiedzi": [
+      "<class 'str'>",
+      "<class 'dict'>",
+      "<class 'json'>",
+      "Błąd"
+    ],
+    "prawidlowa": 0,
+    "tlumaczenie": "`json.dumps()` konwertuje obiekt Pythona (np. dict) do stringa JSON. Zwraca `str`, nie `dict`. Aby odczytać z powrotem, użyj `json.loads()`."
+  },
+  {
+    "id": 21,
+    "typ": "teoria",
+    "pytanie": "Czy `multiprocessing` wymaga `if __name__ == \"__main__\":` na Windows?",
+    "odpowiedzi": [
+      "Tak",
+      "Nie",
+      "Tylko w Python 2",
+      "Zależy od wersji"
+    ],
+    "prawidlowa": 0,
+    "tlumaczenie": "Tak, na Windows `multiprocessing` wymaga `if __name__ == \"__main__\":` aby uniknąć nieskończonej rekurencji przy tworzeniu procesów. Na Linuxie nie jest to obowiązkowe, ale zalecane."
+  },
+  {
+    "id": 22,
+    "typ": "kod",
+    "pytanie": "Jaki będzie wynik?\n```python\nfrom functools import reduce\n\nwynik = reduce(lambda x, y: x + y, [1, 2, 3, 4])\nprint(wynik)\n```",
+    "odpowiedzi": [
+      "10",
+      "6",
+      "[1, 2, 3, 4]",
+      "Błąd"
+    ],
+    "prawidlowa": 0,
+    "tlumaczenie": "`reduce()` redukuje listę do jednej wartości. `lambda x, y: x + y` sumuje elementy: `((1+2)+3)+4 = 10`."
+  },
+  {
+    "id": 23,
+    "typ": "teoria",
+    "pytanie": "Która metoda magiczna jest wywoływana przez `print(obj)`?",
+    "odpowiedzi": [
+      "__str__",
+      "__repr__",
+      "__init__",
+      "__print__"
+    ],
+    "prawidlowa": 0,
+    "tlumaczenie": "`print(obj)` wywołuje `obj.__str__()`. Jeśli nie jest zdefiniowana, używa `__repr__()`. `__str__` powinna zwracać czytelną reprezentację dla użytkownika."
+  },
+  {
+    "id": 24,
+    "typ": "kod",
+    "pytanie": "Co wyświetli ten kod?\n```python\nimport socket\n\ns = socket.socket(socket.AF_INET, socket.SOCK_STREAM)\nprint(type(s).__name__)\n```",
+    "odpowiedzi": [
+      "socket",
+      "AF_INET",
+      "SOCK_STREAM",
+      "Błąd"
+    ],
+    "prawidlowa": 0,
+    "tlumaczenie": "`socket.socket()` tworzy obiekt typu `socket`. `type(s).__name__` zwraca nazwę klasy obiektu, czyli `\"socket\"`."
+  },
+  {
+    "id": 25,
+    "typ": "teoria",
+    "pytanie": "Co oznacza `async` przed definicją funkcji?",
+    "odpowiedzi": [
+      "Funkcja asynchroniczna (coroutine)",
+      "Funkcja szybka",
+      "Funkcja zewnętrzna",
+      "Błąd składni"
+    ],
+    "prawidlowa": 0,
+    "tlumaczenie": "`async def` definiuje funkcję asynchroniczną (coroutine). Może używać `await` do oczekiwania na inne operacje asynchroniczne bez blokowania wątku."
+  },
+  {
+    "id": 26,
+    "typ": "kod",
+    "pytanie": "Ile elementów ma wynikowa lista?\n```python\n[x**2 for x in range(5) if x % 2 == 0]\n```",
+    "odpowiedzi": [
+      "3",
+      "5",
+      "2",
+      "4"
+    ],
+    "prawidlowa": 0,
+    "tlumaczenie": "List comprehension iteruje przez `range(5)` = `[0,1,2,3,4]`, filtruje parzyste (`x % 2 == 0`): `[0,2,4]`, i podnosi do kwadratu: `[0,4,16]` = 3 elementy."
+  },
+  {
+    "id": 27,
+    "typ": "teoria",
+    "pytanie": "Jaka jest różnica między `list` a `tuple`?",
+    "odpowiedzi": [
+      "list jest mutowalna, tuple jest niemutowalna",
+      "list jest szybka, tuple jest wolna",
+      "Nie ma różnicy",
+      "list jest dla liczb, tuple dla tekstu"
+    ],
+    "prawidlowa": 0,
+    "tlumaczenie": "`list` można modyfikować (dodawać, usuwać elementy). `tuple` jest niemutowalna (immutable) - po utworzeniu nie można zmienić elementów. `tuple` używa `()`, `list` używa `[]`."
+  },
+  {
+    "id": 28,
+    "typ": "kod",
+    "pytanie": "Co się stanie?\n```python\nclass Klasa:\n    def __init__(self, x):\n        self.x = x\n\nobj = Klasa(10)\nprint(obj.y)\n```",
+    "odpowiedzi": [
+      "AttributeError - brak atrybutu 'y'",
+      "None",
+      "10",
+      "Błąd składni"
+    ],
+    "prawidlowa": 0,
+    "tlumaczenie": "Obiekt `obj` ma tylko atrybut `x`, nie ma `y`. Próba dostępu do `obj.y` rzuca `AttributeError`."
+  },
+  {
+    "id": 29,
+    "typ": "teoria",
+    "pytanie": "Co zwraca `super()` w klasie dziedziczącej?",
+    "odpowiedzi": [
+      "Referencję do klasy bazowej",
+      "Referencję do klasy potomnej",
+      "None",
+      "Błąd"
+    ],
+    "prawidlowa": 0,
+    "tlumaczenie": "`super()` zwraca obiekt proxy, który przekierowuje wywołania metod do klasy bazowej (rodzica). Używane do wywoływania metod z klasy nadrzędnej w dziedziczeniu."
+  },
+  {
+    "id": 30,
+    "typ": "kod",
+    "pytanie": "Jaki będzie wynik?\n```python\na = 5\nb = 5\nc = 300\nd = 300\n\nprint(a is b, c is d)\n```",
+    "odpowiedzi": [
+      "True False (lub True True - zależy od implementacji)",
+      "True True",
+      "False False",
+      "Błąd"
+    ],
+    "prawidlowa": 0,
+    "tlumaczenie": "Python cachuje małe liczby całkowite (-5 do 256), więc `a is b` (oba 5) zawsze `True`. Dla większych liczb (jak 300) może być różnie - mogą być różne obiekty, więc `False`, ale niektóre implementacje mogą cachować więcej. W praktyce używaj `==` do porównywania wartości."
+  },
+  {
+    "id": 31,
+    "typ": "kod",
+    "pytanie": "Co wyświetli ten kod?\n```python\nclass Rodzic:\n    def __init__(self, x):\n        self.x = x\n\nclass Dziecko(Rodzic):\n    def __init__(self, x, y):\n        super().__init__(x)\n        self.y = y\n\nd = Dziecko(1, 2)\nprint(d.x, d.y)\n```",
+    "odpowiedzi": [
+      "1 2",
+      "Błąd",
+      "None 2",
+      "0 2"
+    ],
+    "prawidlowa": 0,
+    "tlumaczenie": "`super().__init__(x)` wywołuje konstruktor klasy bazowej `Rodzic`, który ustawia `self.x = x`. Następnie w `Dziecko` ustawiane jest `self.y = y`. Wynik: `d.x = 1`, `d.y = 2`."
+  },
+  {
+    "id": 32,
+    "typ": "teoria",
+    "pytanie": "Która metoda magiczna jest wywoływana przez `len(obj)`?",
+    "odpowiedzi": [
+      "__len__",
+      "__length__",
+      "__size__",
+      "__count__"
+    ],
+    "prawidlowa": 0,
+    "tlumaczenie": "`len(obj)` wywołuje `obj.__len__()`. Ta metoda powinna zwracać liczbę całkowitą reprezentującą długość obiektu."
+  },
+  {
+    "id": 33,
+    "typ": "kod",
+    "pytanie": "Co się stanie?\n```python\ntry:\n    x = int(\"abc\")\nexcept ValueError as e:\n    print(f\"Blad: {e}\")\n```",
+    "odpowiedzi": [
+      "Wyświetli: Blad: invalid literal for int() with base 10: 'abc'",
+      "Program się zawiesi",
+      "Brak wyjścia",
+      "SyntaxError"
+    ],
+    "prawidlowa": 0,
+    "tlumaczenie": "`int(\"abc\")` rzuca `ValueError`, bo \"abc\" nie można przekonwertować na liczbę. Wyjątek jest przechwytywany i wyświetlane jest jego komunikaty."
+  },
+  {
+    "id": 34,
+    "typ": "teoria",
+    "pytanie": "Który operator zwraca resztę z dzielenia?",
+    "odpowiedzi": [
+      "%",
+      "//",
+      "/",
+      "**"
+    ],
+    "prawidlowa": 0,
+    "tlumaczenie": "Operator `%` (modulo) zwraca resztę z dzielenia. Przykład: `10 % 3 = 1` (bo 10 = 3*3 + 1). `//` to dzielenie całkowite, `/` to dzielenie, `**` to potęgowanie."
+  },
+  {
+    "id": 35,
+    "typ": "kod",
+    "pytanie": "Jaka będzie wartość `x`?\n```python\nx = 2 ** 3\n```",
+    "odpowiedzi": [
+      "8",
+      "6",
+      "9",
+      "5"
+    ],
+    "prawidlowa": 0,
+    "tlumaczenie": "Operator `**` to potęgowanie. `2 ** 3` oznacza 2 do potęgi 3, czyli `2 * 2 * 2 = 8`."
+  },
+  {
+    "id": 36,
+    "typ": "teoria",
+    "pytanie": "Czy można modyfikować elementy `tuple` po utworzeniu?",
+    "odpowiedzi": [
+      "Nie, tuple jest niemutowalna",
+      "Tak, tak jak list",
+      "Tylko w Python 2",
+      "Zależy od wersji"
+    ],
+    "prawidlowa": 0,
+    "tlumaczenie": "`tuple` jest niemutowalna (immutable) - po utworzeniu nie można zmieniać, dodawać ani usuwać elementów. Aby zmienić wartość, trzeba utworzyć nową krotkę."
+  },
+  {
+    "id": 37,
+    "typ": "kod",
+    "pytanie": "Co się stanie?\n```python\nlista = [1, 2, 3]\nlista[0] = 10\nprint(lista)\n```",
+    "odpowiedzi": [
+      "[10, 2, 3]",
+      "[1, 2, 3]",
+      "Błąd",
+      "10"
+    ],
+    "prawidlowa": 0,
+    "tlumaczenie": "Lista jest mutowalna (mutable), więc można modyfikować elementy przez indeks. `lista[0] = 10` zmienia pierwszy element z 1 na 10."
+  },
+  {
+    "id": 38,
+    "typ": "teoria",
+    "pytanie": "Jaki jest operator logiczny \"lub\" w Pythonie?",
+    "odpowiedzi": [
+      "or",
+      "and",
+      "||",
+      "|"
+    ],
+    "prawidlowa": 0,
+    "tlumaczenie": "Operator `or` to logiczne \"lub\". `and` to \"i\", `||` nie istnieje w Pythonie (to C/Java), `|` to operator bitowy."
+  },
+  {
+    "id": 39,
+    "typ": "kod",
+    "pytanie": "Jaki będzie wynik?\n```python\nx = True or False\nprint(x)\n```",
+    "odpowiedzi": [
+      "True",
+      "False",
+      "Błąd",
+      "None"
+    ],
+    "prawidlowa": 0,
+    "tlumaczenie": "Operator `or` zwraca pierwszą wartość `True` lub ostatnią, jeśli wszystkie są `False`. `True or False` → `True` (bo pierwsza wartość jest `True`)."
+  },
+  {
+    "id": 40,
+    "typ": "teoria",
+    "pytanie": "Który typ danych w Pythonie jest mutowalny?",
+    "odpowiedzi": [
+      "list",
+      "tuple",
+      "str",
+      "int"
+    ],
+    "prawidlowa": 0,
+    "tlumaczenie": "`list` jest mutowalna (można modyfikować). `tuple`, `str` i `int` są niemutowalne (immutable) - nie można ich zmieniać po utworzeniu."
+  },
+  {
+    "id": 41,
+    "typ": "kod",
+    "pytanie": "Co wyświetli ten kod?\n```python\nfrom abc import ABC, abstractmethod\n\nclass Ksztalt(ABC):\n    @abstractmethod\n    def pole(self):\n        pass\n\n# ksztalt = Ksztalt()\n```",
+    "odpowiedzi": [
+      "Błąd - nie można utworzyć instancji klasy abstrakcyjnej",
+      "Działa poprawnie",
+      "None",
+      "Brak wyjścia"
+    ],
+    "prawidlowa": 0,
+    "tlumaczenie": "Klasa abstrakcyjna z metodą abstrakcyjną nie może być instancjonowana bezpośrednio. Jeśli odkomentujesz `ksztalt = Ksztalt()`, dostaniesz `TypeError`. Trzeba najpierw stworzyć klasę potomną i zaimplementować `pole()`."
+  },
+  {
+    "id": 42,
+    "typ": "teoria",
+    "pytanie": "Co oznacza `@abstractmethod`?",
+    "odpowiedzi": [
+      "Dekorator oznaczający metodę abstrakcyjną",
+      "Dekorator do testowania",
+      "Metoda specjalna",
+      "Błąd składni"
+    ],
+    "prawidlowa": 0,
+    "tlumaczenie": "`@abstractmethod` to dekorator z modułu `abc`, który oznacza metodę jako abstrakcyjną. Klasy potomne MUSZĄ ją zaimplementować, inaczej nie można utworzyć instancji."
+  },
+  {
+    "id": 43,
+    "typ": "kod",
+    "pytanie": "Jaki będzie wynik?\n```python\ndef fun(x, y=5):\n    return x + y\n\nprint(fun(10))\n```",
+    "odpowiedzi": [
+      "15",
+      "10",
+      "Błąd",
+      "5"
+    ],
+    "prawidlowa": 0,
+    "tlumaczenie": "Funkcja ma argument domyślny `y=5`. Gdy wywołujemy `fun(10)`, `x=10` a `y` używa wartości domyślnej `5`. Wynik: `10 + 5 = 15`."
+  },
+  {
+    "id": 44,
+    "typ": "teoria",
+    "pytanie": "Która instrukcja pozwala przejść do następnej iteracji w pętli?",
+    "odpowiedzi": [
+      "continue",
+      "break",
+      "pass",
+      "skip"
+    ],
+    "prawidlowa": 0,
+    "tlumaczenie": "`continue` przerywa bieżącą iterację i przechodzi do następnej. `break` przerywa całą pętlę. `pass` to pusta instrukcja (nic nie robi). `skip` nie istnieje w Pythonie."
+  },
+  {
+    "id": 45,
+    "typ": "kod",
+    "pytanie": "Co wyświetli ten kod?\n```python\nfor i in range(5):\n    if i == 2:\n        continue\n    print(i)\n```",
+    "odpowiedzi": [
+      "0\\n1\\n3\\n4",
+      "0\\n1\\n2\\n3\\n4",
+      "2",
+      "Błąd"
+    ],
+    "prawidlowa": 0,
+    "tlumaczenie": "Gdy `i == 2`, `continue` pomija resztę iteracji i przechodzi do następnej. Więc drukuje: 0, 1, 3, 4 (bez 2)."
+  },
+  {
+    "id": 46,
+    "typ": "teoria",
+    "pytanie": "Co zwraca `range(5)`?",
+    "odpowiedzi": [
+      "Obiekt range (generator liczb 0-4)",
+      "Lista [0, 1, 2, 3, 4]",
+      "Liczbę 5",
+      "Błąd"
+    ],
+    "prawidlowa": 0,
+    "tlumaczenie": "`range(5)` zwraca obiekt typu `range`, który generuje liczby od 0 do 4 (5 elementów). To nie jest lista - aby mieć listę, użyj `list(range(5))`."
+  },
+  {
+    "id": 47,
+    "typ": "kod",
+    "pytanie": "Jaki będzie wynik?\n```python\nx = \"Hello\"\nx[0] = \"h\"\nprint(x)\n```",
+    "odpowiedzi": [
+      "TypeError - str jest niemutowalna",
+      "hello",
+      "Hello",
+      "h"
+    ],
+    "prawidlowa": 0,
+    "tlumaczenie": "`str` jest niemutowalna (immutable). Nie można modyfikować pojedynczych znaków przez indeks. Próba `x[0] = \"h\"` rzuca `TypeError`. Aby zmienić, trzeba utworzyć nowy string: `x = \"h\" + x[1:]`."
+  },
+  {
+    "id": 48,
+    "typ": "teoria",
+    "pytanie": "Który typ danych w Pythonie nie może zawierać duplikatów?",
+    "odpowiedzi": [
+      "set",
+      "list",
+      "tuple",
+      "dict"
+    ],
+    "prawidlowa": 0,
+    "tlumaczenie": "`set` (zbiór) nie może zawierać duplikatów - automatycznie usuwa powtarzające się elementy. `list`, `tuple` i `dict` mogą zawierać duplikaty (w dict duplikaty kluczy nadpisują poprzednie wartości)."
+  },
+  {
+    "id": 49,
+    "typ": "kod",
+    "pytanie": "Jaka będzie zawartość `s`?\n```python\ns = {1, 2, 2, 3, 3, 3}\nprint(s)\n```",
+    "odpowiedzi": [
+      "{1, 2, 3}",
+      "{1, 2, 2, 3, 3, 3}",
+      "Błąd",
+      "{6}"
+    ],
+    "prawidlowa": 0,
+    "tlumaczenie": "`set` automatycznie usuwa duplikaty. `{1, 2, 2, 3, 3, 3}` zostaje zredukowane do `{1, 2, 3}` - każdy element występuje tylko raz."
+  },
+  {
+    "id": 50,
+    "typ": "teoria",
+    "pytanie": "Jak nazywa się kluczowa wartość reprezentująca brak wartości w Pythonie?",
+    "odpowiedzi": [
+      "None",
+      "null",
+      "NULL",
+      "undefined"
+    ],
+    "prawidlowa": 0,
+    "tlumaczenie": "W Pythonie `None` reprezentuje brak wartości (odpowiednik `null` w innych językach). `null`, `NULL` i `undefined` nie istnieją w Pythonie (to z JavaScript/C/Java)."
+  },
+  {
+    "id": 51,
+    "typ": "kod",
+    "pytanie": "Co zwróci ten kod?\n```python\ndef fun():\n    pass\n\nprint(fun())\n```",
+    "odpowiedzi": [
+      "None",
+      "pass",
+      "Błąd",
+      "Pusta wartość"
+    ],
+    "prawidlowa": 0,
+    "tlumaczenie": "Funkcja bez `return` zwraca `None` domyślnie. `pass` to tylko pusta instrukcja (syntaktyczna \"dźwignia\"), nie zwraca wartości."
+  },
+  {
+    "id": 52,
+    "typ": "teoria",
+    "pytanie": "Który błąd występuje przy dzieleniu przez zero?",
+    "odpowiedzi": [
+      "ZeroDivisionError",
+      "ValueError",
+      "TypeError",
+      "ArithmeticError"
+    ],
+    "prawidlowa": 0,
+    "tlumaczenie": "Dzielenie przez zero (`10 / 0`) rzuca `ZeroDivisionError`. To specjalny wyjątek dla dzielenia przez zero. `ArithmeticError` to klasa bazowa, ale konkretnie używa się `ZeroDivisionError`."
+  },
+  {
+    "id": 53,
+    "typ": "kod",
+    "pytanie": "Co się stanie?\n```python\ntry:\n    x = \"5\" + 5\nexcept TypeError as e:\n    print(\"Blad typu\")\n```",
+    "odpowiedzi": [
+      "Wyświetli: Blad typu",
+      "Wyświetli: 55",
+      "Brak wyjścia",
+      "SyntaxError"
+    ],
+    "prawidlowa": 0,
+    "tlumaczenie": "Nie można dodawać stringa do liczby (`\"5\" + 5`). To rzuca `TypeError`, który jest przechwytywany i wyświetla się \"Blad typu\"."
+  },
+  {
+    "id": 54,
+    "typ": "teoria",
+    "pytanie": "Który błąd występuje przy dostępie do nieistniejącego klucza w słowniku?",
+    "odpowiedzi": [
+      "KeyError",
+      "IndexError",
+      "AttributeError",
+      "ValueError"
+    ],
+    "prawidlowa": 0,
+    "tlumaczenie": "Próba dostępu do nieistniejącego klucza w dict (np. `dct[\"nieistnieje\"]`) rzuca `KeyError`. `IndexError` to dla list/tupli (indeks poza zakresem), `AttributeError` to dla atrybutów obiektów."
+  },
+  {
+    "id": 55,
+    "typ": "kod",
+    "pytanie": "Co się stanie?\n```python\ndct = {\"a\": 1}\nprint(dct[\"b\"])\n```",
+    "odpowiedzi": [
+      "KeyError",
+      "None",
+      "0",
+      "Błąd składni"
+    ],
+    "prawidlowa": 0,
+    "tlumaczenie": "Słownik `dct` ma tylko klucz `\"a\"`, nie ma `\"b\"`. Próba dostępu `dct[\"b\"]` rzuca `KeyError`. Aby uniknąć błędu, użyj `dct.get(\"b\")` (zwróci `None`) lub `dct.get(\"b\", 0)` (zwróci domyślną wartość)."
+  },
+  {
+    "id": 56,
+    "typ": "teoria",
+    "pytanie": "Który błąd występuje przy dostępie do indeksu poza zakresem listy?",
+    "odpowiedzi": [
+      "IndexError",
+      "KeyError",
+      "ValueError",
+      "AttributeError"
+    ],
+    "prawidlowa": 0,
+    "tlumaczenie": "Próba dostępu do elementu listy poza zakresem (np. `lista[10]` gdy lista ma 3 elementy) rzuca `IndexError`. `KeyError` to dla słowników, `ValueError` dla nieprawidłowych wartości, `AttributeError` dla atrybutów."
+  },
+  {
+    "id": 57,
+    "typ": "kod",
+    "pytanie": "Co się stanie?\n```python\nlista = [1, 2, 3]\nprint(lista[5])\n```",
+    "odpowiedzi": [
+      "IndexError",
+      "None",
+      "Brak wyjścia",
+      "3"
+    ],
+    "prawidlowa": 0,
+    "tlumaczenie": "Lista ma tylko 3 elementy (indeksy 0, 1, 2). Próba dostępu do `lista[5]` jest poza zakresem i rzuca `IndexError`."
+  },
+  {
+    "id": 58,
+    "typ": "teoria",
+    "pytanie": "Czy można używać `else` z blokiem `try-except`?",
+    "odpowiedzi": [
+      "Tak, wykonuje się gdy nie było wyjątku",
+      "Nie, nie istnieje",
+      "Tylko z konkretnym wyjątkiem",
+      "Tylko w Python 3.8+"
+    ],
+    "prawidlowa": 0,
+    "tlumaczenie": "Tak, `else` w `try-except-else` wykonuje się TYLKO gdy kod w `try` zakończył się bez wyjątku. Używane do rozdzielenia kodu, który powinien się wykonać przy sukcesie, od kodu obsługującego błędy."
+  },
+  {
+    "id": 59,
+    "typ": "kod",
+    "pytanie": "Co wyświetli ten kod?\n```python\ntry:\n    x = 10 / 2\nexcept ZeroDivisionError:\n    print(\"Blad\")\nelse:\n    print(\"OK\")\n```",
+    "odpowiedzi": [
+      "OK",
+      "Blad",
+      "Brak wyjścia",
+      "5"
+    ],
+    "prawidlowa": 0,
+    "tlumaczenie": "Dzielenie `10 / 2 = 5` nie rzuca wyjątku, więc wykonuje się blok `else` i wyświetla się \"OK\". `except` wykonuje się TYLKO gdy jest wyjątek."
+  },
+  {
+    "id": 60,
+    "typ": "teoria",
+    "pytanie": "Co robi instrukcja `raise`?",
+    "odpowiedzi": [
+      "Rzuca wyjątek",
+      "Przerywa program",
+      "Wznawia wyjątek",
+      "Importuje moduł"
+    ],
+    "prawidlowa": 0,
+    "tlumaczenie": "`raise` rzuca (wywołuje) wyjątek. Można użyć `raise ValueError(\"komunikat\")` aby rzucić konkretny wyjątek lub `raise` bez argumentów aby ponownie rzucić aktualny wyjątek."
+  },
+  {
+    "id": 61,
+    "typ": "kod",
+    "pytanie": "Co się stanie?\n```python\nif 5 > 10:\n    raise ValueError(\"To jest błąd\")\nprint(\"Kontynuacja\")\n```",
+    "odpowiedzi": [
+      "Wyświetli: Kontynuacja",
+      "ValueError: To jest błąd",
+      "SyntaxError",
+      "Brak wyjścia"
+    ],
+    "prawidlowa": 0,
+    "tlumaczenie": "Warunek `5 > 10` jest `False`, więc kod w `if` nie wykonuje się. `raise` nie jest wywoływane, więc program kontynuuje i wyświetla \"Kontynuacja\"."
+  },
+  {
+    "id": 62,
+    "typ": "teoria",
+    "pytanie": "Czy można definiować własne wyjątki w Pythonie?",
+    "odpowiedzi": [
+      "Tak, przez dziedziczenie po Exception",
+      "Nie, tylko wbudowane",
+      "Tylko w Python 3.8+",
+      "Tylko przez moduły zewnętrzne"
+    ],
+    "prawidlowa": 0,
+    "tlumaczenie": "Tak, można tworzyć własne wyjątki definiując klasę dziedziczącą po `Exception` lub innych wbudowanych wyjątkach. Przykład: `class MojBlad(Exception): pass`."
+  },
+  {
+    "id": 63,
+    "typ": "kod",
+    "pytanie": "Co się stanie?\n```python\nclass MojBlad(Exception):\n    pass\n\nraise MojBlad(\"Komunikat\")\n```",
+    "odpowiedzi": [
+      "MojBlad: Komunikat",
+      "Exception: Komunikat",
+      "Brak błędu",
+      "SyntaxError"
+    ],
+    "prawidlowa": 0,
+    "tlumaczenie": "Utworzono własny wyjątek `MojBlad` dziedziczący po `Exception`. `raise MojBlad(\"Komunikat\")` rzuca ten wyjątek z komunikatem. Jeśli nie jest przechwytywany, program się zatrzyma i wyświetli `MojBlad: Komunikat`."
+  },
+  {
+    "id": 64,
+    "typ": "teoria",
+    "pytanie": "Czy można importować konkretne funkcje z modułu?",
+    "odpowiedzi": [
+      "Tak, używając `from modul import funkcja`",
+      "Nie, tylko całe moduły",
+      "Tylko w Python 3.8+",
+      "Tylko dla niektórych modułów"
+    ],
+    "prawidlowa": 0,
+    "tlumaczenie": "Tak, można importować konkretne funkcje, klasy lub zmienne używając `from modul import nazwa`. To pozwala używać ich bez prefiksu modułu (np. `from math import sqrt` → `sqrt(4)` zamiast `math.sqrt(4)`)."
+  },
+  {
+    "id": 65,
+    "typ": "kod",
+    "pytanie": "Co zwróci ten kod?\n```python\nfrom math import sqrt, pi\nprint(sqrt(16), pi)\n```",
+    "odpowiedzi": [
+      "4.0 3.141592653589793",
+      "Błąd",
+      "sqrt(16) pi",
+      "4 3.14"
+    ],
+    "prawidlowa": 0,
+    "tlumaczenie": "`from math import sqrt, pi` importuje konkretne funkcje/zmienne. `sqrt(16)` zwraca `4.0` (float), `pi` to stała matematyczna `3.141592653589793`."
+  },
+  {
+    "id": 66,
+    "typ": "teoria",
+    "pytanie": "Co się dzieje z kodem w bloku `if __name__ == \"__main__\":`?",
+    "odpowiedzi": [
+      "Wykonuje się tylko przy uruchomieniu jako skrypt",
+      "Wykonuje się zawsze",
+      "Nie wykonuje się nigdy",
+      "Tylko przy imporcie"
+    ],
+    "prawidlowa": 0,
+    "tlumaczenie": "`if __name__ == \"__main__\":` sprawdza, czy plik jest uruchamiany bezpośrednio (nie jako import). Kod w tym bloku wykonuje się TYLKO gdy uruchamiasz `python plik.py`, nie gdy importujesz go w innym pliku."
+  },
+  {
+    "id": 67,
+    "typ": "kod",
+    "pytanie": "Plik `modul.py`:\n```python\nprint(\"Modul załadowany\")\nif __name__ == \"__main__\":\n    print(\"Skrypt uruchomiony\")\n```\nJeśli uruchomisz `python modul.py`, co zobaczysz?",
+    "odpowiedzi": [
+      "Modul załadowany\\nSkrypt uruchomiony",
+      "Skrypt uruchomiony",
+      "Modul załadowany",
+      "Brak wyjścia"
+    ],
+    "prawidlowa": 0,
+    "tlumaczenie": "Gdy uruchamiasz plik bezpośrednio, najpierw wykonuje się cały kod (drukuje \"Modul załadowany\"), potem `__name__` jest `\"__main__\"`, więc wykonuje się też blok `if` (drukuje \"Skrypt uruchomiony\")."
+  },
+  {
+    "id": 68,
+    "typ": "teoria",
+    "pytanie": "Czy można używać aliasów przy imporcie?",
+    "odpowiedzi": [
+      "Tak, używając `import modul as alias`",
+      "Nie, tylko oryginalne nazwy",
+      "Tylko w Python 3.8+",
+      "Tylko dla niektórych modułów"
+    ],
+    "prawidlowa": 0,
+    "tlumaczenie": "Tak, można używać `as` aby nadać modułowi, funkcji lub zmiennej inną nazwę przy imporcie. Przykład: `import numpy as np` lub `from os import path as ospath`."
+  },
+  {
+    "id": 69,
+    "typ": "kod",
+    "pytanie": "Co zwróci ten kod?\n```python\nimport math as m\nprint(m.sqrt(9))\n```",
+    "odpowiedzi": [
+      "3.0",
+      "Błąd",
+      "math.sqrt(9)",
+      "3"
+    ],
+    "prawidlowa": 0,
+    "tlumaczenie": "`import math as m` importuje moduł `math` pod aliasem `m`. Teraz używamy `m.sqrt(9)` zamiast `math.sqrt(9)`. Wynik: `3.0` (float)."
+  },
+  {
+    "id": 70,
+    "typ": "teoria",
+    "pytanie": "Jaki typ zwraca `open(\"plik.txt\", \"r\")`?",
+    "odpowiedzi": [
+      "Obiekt pliku (file object)",
+      "String z zawartością pliku",
+      "Lista linii",
+      "None"
+    ],
+    "prawidlowa": 0,
+    "tlumaczenie": "`open()` zwraca obiekt pliku (file object), nie zawartość. Aby odczytać zawartość, trzeba użyć metod jak `.read()`, `.readline()` lub `.readlines()`. Po użyciu należy zamknąć plik (`.close()` lub użyć `with`)."
+  },
+  {
+    "id": 71,
+    "typ": "kod",
+    "pytanie": "Co zwróci ten kod?\n```python\nwith open(\"test.txt\", \"r\") as f:\n    linie = f.readlines()\nprint(type(linie))\n```\n(Zakładając, że plik istnieje)",
+    "odpowiedzi": [
+      "<class 'list'>",
+      "<class 'str'>",
+      "<class 'file'>",
+      "Błąd"
+    ],
+    "prawidlowa": 0,
+    "tlumaczenie": "`.readlines()` zwraca listę stringów, gdzie każdy element to jedna linia z pliku (łącznie z `\\n` na końcu). Typ: `list`."
+  },
+  {
+    "id": 72,
+    "typ": "teoria",
+    "pytanie": "Jaki tryb otwarcia pliku dodaje zawartość na koniec istniejącego pliku?",
+    "odpowiedzi": [
+      "a (append)",
+      "w (write)",
+      "r (read)",
+      "x (exclusive)"
+    ],
+    "prawidlowa": 0,
+    "tlumaczenie": "Tryb `\"a\"` (append) otwiera plik do dopisywania - nowa zawartość jest dodawana na końcu, nie nadpisuje istniejącej. `\"w\"` nadpisuje, `\"r\"` tylko do odczytu, `\"x\"` tworzy nowy (błąd jeśli istnieje)."
+  },
+  {
+    "id": 73,
+    "typ": "kod",
+    "pytanie": "Plik `test.txt` zawiera: \"A\"\\nPo wykonaniu kodu:\n```python\nwith open(\"test.txt\", \"a\") as f:\n    f.write(\"B\")\n```\nCo będzie w pliku?",
+    "odpowiedzi": [
+      "A\\nB",
+      "B",
+      "AB",
+      "A"
+    ],
+    "prawidlowa": 0,
+    "tlumaczenie": "Tryb `\"a\"` (append) dopisuje na końcu pliku, nie nadpisuje. Zawartość przed: `\"A\"\\n`. Po dopisaniu `\"B\"`: `\"A\"\\nB`."
+  },
+  {
+    "id": 74,
+    "typ": "teoria",
+    "pytanie": "Czy plik otwarty przez `with open()` zamyka się automatycznie?",
+    "odpowiedzi": [
+      "Tak, po wyjściu z bloku with",
+      "Nie, trzeba ręcznie zamknąć",
+      "Tylko w trybie 'r'",
+      "Zależy od wersji Pythona"
+    ],
+    "prawidlowa": 0,
+    "tlumaczenie": "Tak, `with open()` automatycznie zamyka plik po wyjściu z bloku `with`, nawet jeśli wystąpi wyjątek. To kontekst manager - najlepszy sposób na pracę z plikami w Pythonie."
+  },
+  {
+    "id": 75,
+    "typ": "kod",
+    "pytanie": "Co się stanie?\n```python\nf = open(\"test.txt\", \"w\")\nf.write(\"Hello\")\n# Brak f.close()\n```",
+    "odpowiedzi": [
+      "Plik może nie zostać zapisany poprawnie",
+      "Zapisze się automatycznie",
+      "Błąd",
+      "Plik się sam zamknie"
+    ],
+    "prawidlowa": 0,
+    "tlumaczenie": "Bez `f.close()` lub `with`, plik może nie zostać prawidłowo zamknięty i dane mogą nie zostać zapisane do dysku. Python zamknie go przy zakończeniu programu, ale nie jest to gwarantowane. Zawsze używaj `with open()`!"
+  },
+  {
+    "id": 76,
+    "typ": "teoria",
+    "pytanie": "Ile procesów może być uruchomionych jednocześnie w `multiprocessing`?",
+    "odpowiedzi": [
+      "Tyle, ile rdzeni procesora (lub więcej, zależnie od konfiguracji)",
+      "Maksymalnie 1",
+      "Zawsze 2",
+      "Tylko tyle, ile wątków"
+    ],
+    "prawidlowa": 0,
+    "tlumaczenie": "`multiprocessing` tworzy osobne procesy systemowe, które mogą działać równolegle na różnych rdzeniach CPU. Można utworzyć tyle procesów, ile rdzeni (lub więcej, ale wtedy współdzielą CPU). Każdy proces ma własną przestrzeń pamięci."
+  },
+  {
+    "id": 77,
+    "typ": "kod",
+    "pytanie": "Co się stanie?\n```python\nimport multiprocessing\n\ndef zadanie(n):\n    print(f\"Proces {n}\")\n\n# Brak if __name__ == \"__main__\":\nmultiprocessing.Process(target=zadanie, args=(1,)).start()\n```\n(na Windows)",
+    "odpowiedzi": [
+      "Może wystąpić nieskończona rekurencja lub błąd",
+      "Działa poprawnie",
+      "SyntaxError",
+      "Brak wyjścia"
+    ],
+    "prawidlowa": 0,
+    "tlumaczenie": "Na Windows `multiprocessing` wymaga `if __name__ == \"__main__\":` aby uniknąć nieskończonej rekurencji (każdy nowy proces importuje moduł i uruchamia kod). Bez tego może się zapętlić lub wystąpić błąd."
+  },
+  {
+    "id": 78,
+    "typ": "teoria",
+    "pytanie": "Jaka jest różnica między wątkami a procesami w Pythonie?",
+    "odpowiedzi": [
+      "Wątki współdzielą pamięć, procesy mają własną przestrzeń",
+      "Nie ma różnicy",
+      "Wątki są szybsze",
+      "Procesy są zawsze lepsze"
+    ],
+    "prawidlowa": 0,
+    "tlumaczenie": "Wątki (`threading`) współdzielą tę samą przestrzeń pamięci (łatwa komunikacja, ale problemy z GIL). Procesy (`multiprocessing`) mają osobne przestrzenie pamięci (izolacja, mogą używać wielu rdzeni, ale trudniejsza komunikacja)."
+  },
+  {
+    "id": 79,
+    "typ": "kod",
+    "pytanie": "Co się stanie?\n```python\nimport threading\n\nliczba = 0\n\ndef zwieksz():\n    global liczba\n    for _ in range(1000):\n        liczba += 1\n\nwatki = [threading.Thread(target=zwieksz) for _ in range(10)]\nfor w in watki:\n    w.start()\nfor w in watki:\n    w.join()\nprint(liczba)\n```",
+    "odpowiedzi": [
+      "Może być różna wartość (nie zawsze 10000)",
+      "Zawsze 10000",
+      "Błąd",
+      "0"
+    ],
+    "prawidlowa": 0,
+    "tlumaczenie": "Wątki współdzielą zmienną `liczba`, a operacja `liczba += 1` nie jest atomowa (składa się z odczytu, dodania, zapisu). Wątki mogą się wzajemnie nadpisywać, więc wynik może być mniejszy niż 10000. To problem race condition - trzeba użyć blokad (`Lock`)."
+  },
+  {
+    "id": 80,
+    "typ": "teoria",
+    "pytanie": "Co to jest GIL (Global Interpreter Lock)?",
+    "odpowiedzi": [
+      "Mechanizm, który pozwala tylko jednemu wątkowi wykonywać kod Pythona jednocześnie",
+      "Blokada plików",
+      "Funkcja w multiprocessing",
+      "Nie istnieje w Pythonie"
+    ],
+    "prawidlowa": 0,
+    "tlumaczenie": "GIL to mechanizm w CPython, który pozwala tylko jednemu wątkowi wykonywać kod Pythona jednocześnie (nawet na wielordzeniowym CPU). To ogranicza efektywność wątków dla zadań CPU-bound. Procesy (`multiprocessing`) omijają GIL."
+  },
+  {
+    "id": 81,
+    "typ": "kod",
+    "pytanie": "Co wyświetli ten kod?\n```python\nimport socket\n\ns = socket.socket(socket.AF_INET, socket.SOCK_STREAM)\ns.bind((\"127.0.0.1\", 0))\nprint(s.getsockname()[1])\n```",
+    "odpowiedzi": [
+      "Losowy numer portu przydzielony przez system",
+      "0",
+      "Błąd",
+      "127.0.0.1"
+    ],
+    "prawidlowa": 0,
+    "tlumaczenie": "`bind((\"127.0.0.1\", 0))` wiąże socket z adresem IP, ale port `0` oznacza \"przydziel losowy dostępny port\". `getsockname()` zwraca tuple `(adres, port)`, więc `[1]` zwraca numer portu przydzielony przez system."
+  },
+  {
+    "id": 82,
+    "typ": "teoria",
+    "pytanie": "Co oznacza `AF_INET` w socket?",
+    "odpowiedzi": [
+      "Rodzina adresów IPv4",
+      "Rodzina adresów IPv6",
+      "Protokół TCP",
+      "Protokół UDP"
+    ],
+    "prawidlowa": 0,
+    "tlumaczenie": "`AF_INET` to rodzina adresów IPv4 (4 bajty, np. 127.0.0.1). `AF_INET6` to IPv6. `SOCK_STREAM` to TCP, `SOCK_DGRAM` to UDP."
+  },
+  {
+    "id": 83,
+    "typ": "kod",
+    "pytanie": "Co się stanie?\n```python\nimport socket\n\nserver = socket.socket(socket.AF_INET, socket.SOCK_STREAM)\nserver.bind((\"localhost\", 12345))\nserver.listen(1)\nconn, addr = server.accept()\n```\n(Jeśli nikt nie łączy się)",
+    "odpowiedzi": [
+      "Program będzie czekał (blokuje się)",
+      "Błąd natychmiastowy",
+      "Zwróci None",
+      "Zakończy się"
+    ],
+    "prawidlowa": 0,
+    "tlumaczenie": "`accept()` jest operacją blokującą - program czeka aż ktoś się połączy z serwerem. Jeśli nikt nie łączy się, program będzie czekał w nieskończoność (lub do przerwania). To jest normalne zachowanie dla serwerów."
+  },
+  {
+    "id": 84,
+    "typ": "teoria",
+    "pytanie": "Który protokół zapewnia niezawodne połączenie z potwierdzaniem?",
+    "odpowiedzi": [
+      "TCP (SOCK_STREAM)",
+      "UDP (SOCK_DGRAM)",
+      "Oba",
+      "Żaden"
+    ],
+    "prawidlowa": 0,
+    "tlumaczenie": "TCP (`SOCK_STREAM`) to protokół połączeniowy z potwierdzaniem, gwarantuje dostarczenie pakietów w odpowiedniej kolejności. UDP (`SOCK_DGRAM`) jest bezpołączeniowy, bez gwarancji dostarczenia."
+  },
+  {
+    "id": 85,
+    "typ": "kod",
+    "pytanie": "Co zwróci ten kod?\n```python\nimport numpy as np\n\narr = np.array([[1, 2], [3, 4]])\nprint(arr.shape)\n```",
+    "odpowiedzi": [
+      "(2, 2)",
+      "(4,)",
+      "(1, 4)",
+      "Błąd"
+    ],
+    "prawidlowa": 0,
+    "tlumaczenie": "`.shape` zwraca wymiary tablicy jako tuple. `[[1, 2], [3, 4]]` to macierz 2x2 (2 wiersze, 2 kolumny), więc `shape = (2, 2)`."
+  },
+  {
+    "id": 86,
+    "typ": "teoria",
+    "pytanie": "Co tworzy `np.zeros((3, 4))`?",
+    "odpowiedzi": [
+      "Macierz 3x4 wypełnioną zerami",
+      "Listę z 12 zerami",
+      "Jedną liczbę zero",
+      "Błąd"
+    ],
+    "prawidlowa": 0,
+    "tlumaczenie": "`np.zeros((3, 4))` tworzy tablicę NumPy o kształcie 3x4 (3 wiersze, 4 kolumny) wypełnioną zerami. Wszystkie elementy mają wartość `0.0` (float)."
+  },
+  {
+    "id": 87,
+    "typ": "kod",
+    "pytanie": "Co zwróci ten kod?\n```python\nimport numpy as np\n\narr1 = np.array([1, 2, 3])\narr2 = np.array([4, 5, 6])\nprint(arr1 + arr2)\n```",
+    "odpowiedzi": [
+      "[5 7 9]",
+      "[1, 2, 3, 4, 5, 6]",
+      "Błąd",
+      "[1 4 2 5 3 6]"
+    ],
+    "prawidlowa": 0,
+    "tlumaczenie": "W NumPy operacje są wykonywane element-po-element. `arr1 + arr2` dodaje odpowiadające elementy: `[1+4, 2+5, 3+6] = [5, 7, 9]`. To różni się od list Pythona (tam `+` łączyłby listy)."
+  },
+  {
+    "id": 88,
+    "typ": "teoria",
+    "pytanie": "Który moduł jest używany do tworzenia aplikacji webowych w Flask?",
+    "odpowiedzi": [
+      "flask",
+      "django",
+      "http",
+      "web"
+    ],
+    "prawidlowa": 0,
+    "tlumaczenie": "Flask to framework webowy w Pythonie importowany jako `from flask import Flask`. Django to inny framework (większy, pełniejszy). `http` to moduł niskopoziomowy, `web` nie istnieje."
+  },
+  {
+    "id": 89,
+    "typ": "kod",
+    "pytanie": "Co się stanie?\n```python\nfrom flask import Flask\n\napp = Flask(__name__)\n\n@app.route(\"/\")\ndef index():\n    return \"Hello\"\n\napp.run(debug=True)\n```",
+    "odpowiedzi": [
+      "Uruchomi serwer webowy na localhost:5000",
+      "Błąd",
+      "Wyświetli tylko \"Hello\"",
+      "Nic nie zrobi"
+    ],
+    "prawidlowa": 0,
+    "tlumaczenie": "`app.run(debug=True)` uruchamia serwer deweloperski Flask na domyślnym porcie 5000. `@app.route(\"/\")` definiuje trasę dla głównej strony (URL `/`). Gdy otworzysz `http://localhost:5000/`, zobaczysz \"Hello\"."
+  },
+  {
+    "id": 90,
+    "typ": "teoria",
+    "pytanie": "Która metoda w unittest sprawdza czy dwie wartości są równe?",
+    "odpowiedzi": [
+      "assertEqual(a, b)",
+      "assertTrue(x)",
+      "assertIs(a, b)",
+      "assertNone(x)"
+    ],
+    "prawidlowa": 0,
+    "tlumaczenie": "`self.assertEqual(a, b)` sprawdza czy `a == b`. `assertTrue(x)` sprawdza czy `x` jest `True`. `assertIs(a, b)` sprawdza czy `a is b`. `assertIsNone(x)` sprawdza czy `x is None`."
+  },
+  {
+    "id": 91,
+    "typ": "kod",
+    "pytanie": "Co się stanie?\n```python\nimport unittest\n\nclass Test(unittest.TestCase):\n    def test(self):\n        self.assertEqual(2 + 2, 5)\n\nunittest.main()\n```",
+    "odpowiedzi": [
+      "Test się nie powiedzie (AssertionError)",
+      "Test przejdzie",
+      "SyntaxError",
+      "Brak wyjścia"
+    ],
+    "prawidlowa": 0,
+    "tlumaczenie": "`assertEqual(2 + 2, 5)` sprawdza czy `4 == 5`, co jest `False`. Test nie przechodzi i rzuca `AssertionError`. Powinno być `self.assertEqual(2 + 2, 4)`."
+  },
+  {
+    "id": 92,
+    "typ": "teoria",
+    "pytanie": "Co zwraca `json.loads()`?",
+    "odpowiedzi": [
+      "Obiekt Pythona (dict, list, itp.)",
+      "String JSON",
+      "Plik JSON",
+      "Nic"
+    ],
+    "prawidlowa": 0,
+    "tlumaczenie": "`json.loads(string_json)` parsuje string JSON i zwraca odpowiadający obiekt Pythona (dict, list, str, int, float, bool, None). `json.dumps()` robi odwrotnie - konwertuje obiekt Pythona do stringa."
+  },
+  {
+    "id": 93,
+    "typ": "kod",
+    "pytanie": "Jaki będzie typ `x`?\n```python\nimport json\n\nx = json.loads('{\"a\": 1, \"b\": 2}')\nprint(type(x))\n```",
+    "odpowiedzi": [
+      "<class 'dict'>",
+      "<class 'str'>",
+      "<class 'json'>",
+      "Błąd"
+    ],
+    "prawidlowa": 0,
+    "tlumaczenie": "`json.loads()` parsuje string JSON i zwraca obiekt Pythona. JSON obiekt `{}` staje się `dict` w Pythonie. Typ: `dict`."
+  },
+  {
+    "id": 94,
+    "typ": "teoria",
+    "pytanie": "Czy pickle może serializować dowolne obiekty Pythona?",
+    "odpowiedzi": [
+      "Nie, niektóre obiekty nie mogą być serializowane (np. funkcje lambda)",
+      "Tak, wszystkie obiekty",
+      "Tylko listy i słowniki",
+      "Tylko liczby"
+    ],
+    "prawidlowa": 0,
+    "tlumaczenie": "Pickle ma ograniczenia - nie może serializować funkcji lambda, funkcji zdefiniowanych lokalnie, generatorów, niektórych obiektów systemowych. Działa dla większości standardowych typów (list, dict, klasy, itp.)."
+  },
+  {
+    "id": 95,
+    "typ": "kod",
+    "pytanie": "Co się stanie?\n```python\nimport pickle\n\nf = lambda x: x * 2\npickle.dumps(f)\n```",
+    "odpowiedzi": [
+      "PicklingError - funkcje lambda nie mogą być serializowane",
+      "Działa poprawnie",
+      "TypeError",
+      "Brak błędu"
+    ],
+    "prawidlowa": 0,
+    "tlumaczenie": "Funkcje lambda nie mogą być serializowane przez pickle. Próba `pickle.dumps(f)` rzuca `PicklingError`. Aby serializować funkcje, użyj `dill` lub przechowuj kod jako string."
+  },
+  {
+    "id": 96,
+    "typ": "teoria",
+    "pytanie": "Co robi `await` w funkcji asynchronicznej?",
+    "odpowiedzi": [
+      "Czeka na zakończenie operacji asynchronicznej",
+      "Przerywa funkcję",
+      "Rzuca wyjątek",
+      "Importuje moduł"
+    ],
+    "prawidlowa": 0,
+    "tlumaczenie": "`await` w funkcji `async` czeka na zakończenie operacji asynchronicznej (np. `await asyncio.sleep(1)`), ale NIE blokuje wątku - inne zadania mogą działać w tym czasie. Można używać tylko w funkcjach `async`."
+  },
+  {
+    "id": 97,
+    "typ": "kod",
+    "pytanie": "Co się stanie?\n```python\nimport asyncio\n\nasync def zadanie():\n    print(\"Start\")\n    await asyncio.sleep(1)\n    print(\"Koniec\")\n\nasyncio.run(zadanie())\n```",
+    "odpowiedzi": [
+      "Wyświetli: Start\\n(pauza 1 sek)\\nKoniec",
+      "Wyświetli tylko: Start",
+      "Błąd",
+      "Wyświetli od razu: Start\\nKoniec"
+    ],
+    "prawidlowa": 0,
+    "tlumaczenie": "`asyncio.run()` uruchamia funkcję asynchroniczną. `await asyncio.sleep(1)` czeka 1 sekundę (nie blokując innych zadań). Więc: drukuje \"Start\", czeka 1 sek, drukuje \"Koniec\"."
+  },
+  {
+    "id": 98,
+    "typ": "teoria",
+    "pytanie": "Co tworzy list comprehension `[x*2 for x in range(3)]`?",
+    "odpowiedzi": [
+      "[0, 2, 4]",
+      "[0, 1, 2]",
+      "[2, 4, 6]",
+      "Błąd"
+    ],
+    "prawidlowa": 0,
+    "tlumaczenie": "List comprehension iteruje przez `range(3)` = `[0, 1, 2]` i dla każdego `x` wykonuje `x*2`. Wynik: `[0*2, 1*2, 2*2] = [0, 2, 4]`."
+  },
+  {
+    "id": 99,
+    "typ": "kod",
+    "pytanie": "Jaka będzie zawartość listy?\n```python\n[x for x in \"Python\" if x in \"aeiou\"]\n```",
+    "odpowiedzi": [
+      "[]",
+      "['P', 'y', 't', 'h', 'o', 'n']",
+      "['y']",
+      "['o']"
+    ],
+    "prawidlowa": 0,
+    "tlumaczenie": "List comprehension filtruje znaki z \"Python\", które są w \"aeiou\" (samogłoski). \"Python\" zawiera tylko 'o' jako samogłoskę (ale 'o' nie jest w \"aeiou\" - tam są małe litery). Więc: `[]` (pusta lista). Uwaga: \"Python\" ma wielką literę 'P', więc żaden znak nie pasuje do małych liter w \"aeiou\"."
+  },
+  {
+    "id": 100,
+    "typ": "teoria",
+    "pytanie": "Co robi funkcja `map()`?",
+    "odpowiedzi": [
+      "Stosuje funkcję do każdego elementu iterable",
+      "Tworzy mapę",
+      "Importuje moduł",
+      "Rzuca wyjątek"
+    ],
+    "prawidlowa": 0,
+    "tlumaczenie": "`map(funkcja, iterable)` stosuje funkcję do każdego elementu iterable i zwraca iterator. Przykład: `list(map(lambda x: x*2, [1,2,3]))` → `[2,4,6]`. W Pythonie 3 zwraca iterator, nie listę (trzeba `list()`)."
+  },
+  {
+    "id": 101,
+    "typ": "kod",
+    "pytanie": "Co zwróci ten kod?\n```python\nwynik = list(map(str, [1, 2, 3]))\nprint(wynik)\n```",
+    "odpowiedzi": [
+      "['1', '2', '3']",
+      "[1, 2, 3]",
+      "[str, str, str]",
+      "Błąd"
+    ],
+    "prawidlowa": 0,
+    "tlumaczenie": "`map(str, [1, 2, 3])` stosuje funkcję `str()` do każdego elementu: `str(1)`, `str(2)`, `str(3)` → `['1', '2', '3']`. `list()` konwertuje iterator na listę."
+  },
+  {
+    "id": 102,
+    "typ": "teoria",
+    "pytanie": "Co robi funkcja `filter()`?",
+    "odpowiedzi": [
+      "Filtruje elementy spełniające warunek",
+      "Sortuje elementy",
+      "Usuwa duplikaty",
+      "Sumuje elementy"
+    ],
+    "prawidlowa": 0,
+    "tlumaczenie": "`filter(funkcja, iterable)` filtruje elementy, dla których funkcja zwraca `True`. Przykład: `list(filter(lambda x: x > 0, [-1, 0, 2]))` → `[2]`. Zwraca iterator w Pythonie 3."
+  },
+  {
+    "id": 103,
+    "typ": "kod",
+    "pytanie": "Jaki będzie wynik?\n```python\nwynik = list(filter(lambda x: x % 2 == 0, range(10)))\nprint(len(wynik))\n```",
+    "odpowiedzi": [
+      "5",
+      "10",
+      "0",
+      "Błąd"
+    ],
+    "prawidlowa": 0,
+    "tlumaczenie": "`range(10)` = `[0,1,2,3,4,5,6,7,8,9]`. `filter` z warunkiem `x % 2 == 0` (parzyste) zwraca: `[0,2,4,6,8]` = 5 elementów."
+  },
+  {
+    "id": 104,
+    "typ": "teoria",
+    "pytanie": "Co to jest dekorator w Pythonie?",
+    "odpowiedzi": [
+      "Funkcja, która modyfikuje lub opakowuje inną funkcję",
+      "Funkcja do dekorowania stringów",
+      "Specjalna metoda klasy",
+      "Operator"
+    ],
+    "prawidlowa": 0,
+    "tlumaczenie": "Dekorator to funkcja wyższego rzędu, która przyjmuje funkcję jako argument i zwraca zmodyfikowaną funkcję. Używany z `@` przed definicją: `@dekorator` nad `def funkcja():`. Umożliwia dodawanie funkcjonalności bez zmiany kodu funkcji."
+  },
+  {
+    "id": 105,
+    "typ": "kod",
+    "pytanie": "Co wyświetli ten kod?\n```python\ndef dekorator(func):\n    def wrapper():\n        print(\"Przed\")\n        func()\n        print(\"Po\")\n    return wrapper\n\n@dekorator\ndef hello():\n    print(\"Hello\")\n\nhello()\n```",
+    "odpowiedzi": [
+      "Przed\\nHello\\nPo",
+      "Hello",
+      "Przed\\nPo",
+      "Błąd"
+    ],
+    "prawidlowa": 0,
+    "tlumaczenie": "Dekorator `@dekorator` opakowuje funkcję `hello()`. Wywołanie `hello()` faktycznie wywołuje `wrapper()`, który drukuje \"Przed\", wywołuje oryginalną `hello()` (drukuje \"Hello\"), potem \"Po\"."
+  },
+  {
+    "id": 106,
+    "typ": "teoria",
+    "pytanie": "Co robi `yield` w funkcji?",
+    "odpowiedzi": [
+      "Tworzy generator (zwraca wartość, ale zachowuje stan)",
+      "Przerywa funkcję",
+      "Zwraca None",
+      "Rzuca wyjątek"
+    ],
+    "prawidlowa": 0,
+    "tlumaczenie": "`yield` w funkcji przekształca ją w generator. Funkcja zachowuje swój stan między wywołaniami i zwraca wartość za każdym razem, gdy jest wywoływana przez `next()` lub w pętli `for`. Różni się od `return`, który kończy funkcję."
+  },
+  {
+    "id": 107,
+    "typ": "kod",
+    "pytanie": "Co wyświetli ten kod?\n```python\ndef generator():\n    yield 1\n    yield 2\n    yield 3\n\nfor x in generator():\n    print(x)\n```",
+    "odpowiedzi": [
+      "1\\n2\\n3",
+      "1",
+      "<generator object>",
+      "Błąd"
+    ],
+    "prawidlowa": 0,
+    "tlumaczenie": "Funkcja z `yield` to generator. `for` iteruje przez generator, wywołując go wielokrotnie. Za każdym razem `yield` zwraca kolejną wartość: 1, potem 2, potem 3. Wynik: `1\\n2\\n3`."
+  },
+  {
+    "id": 108,
+    "typ": "teoria",
+    "pytanie": "Czy można łączyć list comprehensions zagnieżdżone?",
+    "odpowiedzi": [
+      "Tak, można używać wielu `for`",
+      "Nie, tylko jeden `for`",
+      "Tylko w Python 3.8+",
+      "Tylko dla słowników"
+    ],
+    "prawidlowa": 0,
+    "tlumaczenie": "Tak, można używać zagnieżdżonych pętli w list comprehension. Przykład: `[(x, y) for x in range(2) for y in range(3)]` → `[(0,0), (0,1), (0,2), (1,0), (1,1), (1,2)]`."
+  },
+  {
+    "id": 109,
+    "typ": "kod",
+    "pytanie": "Ile elementów ma lista?\n```python\n[(i, j) for i in range(2) for j in range(2)]\n```",
+    "odpowiedzi": [
+      "4",
+      "2",
+      "1",
+      "Błąd"
+    ],
+    "prawidlowa": 0,
+    "tlumaczenie": "Zagnieżdżona list comprehension: dla każdego `i` w `[0,1]` i każdego `j` w `[0,1]` tworzy parę `(i,j)`. Wynik: `[(0,0), (0,1), (1,0), (1,1)]` = 4 elementy (2x2 kombinacje)."
+  },
+  {
+    "id": 110,
+    "typ": "teoria",
+    "pytanie": "Jaka jest różnica między `__str__` a `__repr__`?",
+    "odpowiedzi": [
+      "__str__ dla użytkownika (czytelne), __repr__ dla deweloperów (precyzyjne)",
+      "Nie ma różnicy",
+      "__repr__ dla użytkownika, __str__ dla deweloperów",
+      "Tylko jedna istnieje"
+    ],
+    "prawidlowa": 0,
+    "tlumaczenie": "`__str__` powinna zwracać czytelną reprezentację dla użytkownika końcowego (używana przez `print()`). `__repr__` powinna zwracać precyzyjną reprezentację dla deweloperów (używana przez `repr()`, powinna być wykonywalnym kodem Pythona)."
+  },
+  {
+    "id": 111,
+    "typ": "kod",
+    "pytanie": "Co wyświetli ten kod?\n```python\nclass Klasa:\n    def __repr__(self):\n        return \"Klasa()\"\n\nobj = Klasa()\nprint(repr(obj))\n```",
+    "odpowiedzi": [
+      "Klasa()",
+      "<__main__.Klasa object at 0x...>",
+      "Błąd",
+      "None"
+    ],
+    "prawidlowa": 0,
+    "tlumaczenie": "`repr(obj)` wywołuje `obj.__repr__()`, która zwraca `\"Klasa()\"`. Gdyby nie było `__repr__`, Python użyłby domyślnej reprezentacji `<__main__.Klasa object at 0x...>`."
+  },
+  {
+    "id": 112,
+    "typ": "teoria",
+    "pytanie": "Czy klasa może dziedziczyć po wielu klasach?",
+    "odpowiedzi": [
+      "Tak, to wielodziedziczenie (multiple inheritance)",
+      "Nie, tylko po jednej",
+      "Tylko w Python 3.8+",
+      "Tylko dla klas abstrakcyjnych"
+    ],
+    "prawidlowa": 0,
+    "tlumaczenie": "Tak, Python obsługuje wielodziedziczenie: `class Dziecko(Klasa1, Klasa2):`. Kolejność klas w nawiasach określa MRO (Method Resolution Order) - kolejność wyszukiwania metod. `super()` zwraca metodę z pierwszej klasy bazowej."
+  },
+  {
+    "id": 113,
+    "typ": "kod",
+    "pytanie": "Co wyświetli ten kod?\n```python\nclass A:\n    def metoda(self):\n        return \"A\"\n\nclass B:\n    def metoda(self):\n        return \"B\"\n\nclass C(A, B):\n    pass\n\nc = C()\nprint(c.metoda())\n```",
+    "odpowiedzi": [
+      "A",
+      "B",
+      "Błąd",
+      "AB"
+    ],
+    "prawidlowa": 0,
+    "tlumaczenie": "Wielodziedziczenie: `C(A, B)` dziedziczy po obu klasach. MRO (Method Resolution Order) wyszukuje metodę od lewej do prawej: najpierw w `A`, potem `B`. Ponieważ `A` ma `metoda()`, używa tej z `A` → zwraca `\"A\"`."
+  },
+  {
+    "id": 114,
+    "typ": "teoria",
+    "pytanie": "Co to jest atrybut klasy vs atrybut instancji?",
+    "odpowiedzi": [
+      "Atrybut klasy jest wspólny dla wszystkich instancji, atrybut instancji jest własny",
+      "Nie ma różnicy",
+      "Atrybut klasy nie istnieje",
+      "To synonimy"
+    ],
+    "prawidlowa": 0,
+    "tlumaczenie": "Atrybut klasy (definiowany poza `__init__`) jest wspólny dla wszystkich instancji. Atrybut instancji (w `__init__` przez `self.`) jest własny każdego obiektu. Zmiana atrybutu klasy wpływa na wszystkie instancje."
+  },
+  {
+    "id": 115,
+    "typ": "kod",
+    "pytanie": "Co wyświetli ten kod?\n```python\nclass Klasa:\n    atr_klasy = 10\n    def __init__(self, x):\n        self.atr_instancji = x\n\na = Klasa(1)\nb = Klasa(2)\nKlasa.atr_klasy = 20\nprint(a.atr_klasy, b.atr_klasy)\n```",
+    "odpowiedzi": [
+      "20 20",
+      "10 10",
+      "1 2",
+      "Błąd"
+    ],
+    "prawidlowa": 0,
+    "tlumaczenie": "`atr_klasy` to atrybut klasy (wspólny). Zmiana `Klasa.atr_klasy = 20` wpływa na WSZYSTKIE instancje, bo wszystkie odwołują się do tego samego atrybutu klasy. Wynik: `a.atr_klasy = 20`, `b.atr_klasy = 20`."
+  },
+  {
+    "id": 116,
+    "typ": "teoria",
+    "pytanie": "Co oznacza `@staticmethod`?",
+    "odpowiedzi": [
+      "Metoda statyczna - nie wymaga instancji ani klasy (nie ma self/cls)",
+      "Metoda abstrakcyjna",
+      "Metoda prywatna",
+      "Błąd składni"
+    ],
+    "prawidlowa": 0,
+    "tlumaczenie": "`@staticmethod` definiuje metodę statyczną - można ją wywołać bez tworzenia instancji (przez klasę lub instancję). Nie przyjmuje `self` ani `cls` jako pierwszego argumentu. Używana gdy metoda jest logicznie powiązana z klasą, ale nie używa instancji/klasy."
+  },
+  {
+    "id": 117,
+    "typ": "kod",
+    "pytanie": "Co się stanie?\n```python\nclass Klasa:\n    @staticmethod\n    def metoda(x):\n        return x * 2\n\nprint(Klasa.metoda(5))\n```",
+    "odpowiedzi": [
+      "10",
+      "Błąd - brak instancji",
+      "Błąd - brak self",
+      "None"
+    ],
+    "prawidlowa": 0,
+    "tlumaczenie": "Metoda statyczna `@staticmethod` może być wywoływana bezpośrednio przez klasę bez tworzenia instancji. `Klasa.metoda(5)` działa i zwraca `5 * 2 = 10`. Nie potrzeba `self`."
+  },
+  {
+    "id": 118,
+    "typ": "teoria",
+    "pytanie": "Co oznacza `@classmethod`?",
+    "odpowiedzi": [
+      "Metoda klasowa - pierwszy argument to klasa (cls), nie instancja",
+      "Metoda abstrakcyjna",
+      "Metoda statyczna",
+      "Dekorator niestandardowy"
+    ],
+    "prawidlowa": 0,
+    "tlumaczenie": "`@classmethod` definiuje metodę klasową - pierwszy argument to klasa (`cls`), nie instancja (`self`). Można wywołać przez klasę lub instancję. Używana do alternatywnych konstruktorów lub operacji na klasie."
+  },
+  {
+    "id": 119,
+    "typ": "kod",
+    "pytanie": "Co wyświetli ten kod?\n```python\nclass Klasa:\n    wartosc = 10\n    @classmethod\n    def zwroc(cls):\n        return cls.wartosc\n\nprint(Klasa.zwroc())\n```",
+    "odpowiedzi": [
+      "10",
+      "Błąd - brak instancji",
+      "None",
+      "Klasa"
+    ],
+    "prawidlowa": 0,
+    "tlumaczenie": "Metoda klasowa `@classmethod` przyjmuje klasę jako pierwszy argument (`cls`). `cls.wartosc` odwołuje się do atrybutu klasy. `Klasa.zwroc()` wywołuje metodę i zwraca `10`."
+  },
+  {
+    "id": 120,
+    "typ": "teoria",
+    "pytanie": "Która metoda magiczna jest wywoływana przy porównaniu `obj1 == obj2`?",
+    "odpowiedzi": [
+      "__eq__",
+      "__cmp__",
+      "__compare__",
+      "__same__"
+    ],
+    "prawidlowa": 0,
+    "tlumaczenie": "`obj1 == obj2` wywołuje `obj1.__eq__(obj2)`. Jeśli nie jest zdefiniowana, Python używa `is` (porównanie tożsamości). Można też zdefiniować `__ne__` (nie równe), `__lt__` (mniejsze), `__gt__` (większe), itp."
+  }
+]
+
