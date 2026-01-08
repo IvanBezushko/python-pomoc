@@ -286,7 +286,7 @@ class TestPythonGUI:
         
         self.btn_start = Button(
             self.frame_buttons,
-            text="▶ Rozpocznij test",
+            text="▶ Rozpocznij test (20 pytań)",
             font=font.Font(size=12, weight='bold'),
             bg="#4CAF50",
             fg="white",
@@ -296,6 +296,19 @@ class TestPythonGUI:
             command=self.start_test
         )
         self.btn_start.pack(side='left', padx=5)
+        
+        self.btn_start_all = Button(
+            self.frame_buttons,
+            text="📚 Wszystkie pytania",
+            font=font.Font(size=12, weight='bold'),
+            bg="#9C27B0",
+            fg="white",
+            relief='flat',
+            padx=30,
+            pady=10,
+            command=self.start_test_all
+        )
+        self.btn_start_all.pack(side='left', padx=5)
         
         self.btn_submit = Button(
             self.frame_buttons,
@@ -418,7 +431,7 @@ class TestPythonGUI:
         self.text_theory.config(state='disabled')
     
     def start_test(self):
-        """Rozpocznij nowy test"""
+        """Rozpocznij nowy test (20 pytań)"""
         # Losuj 20 pytań
         selected = random.sample(self.questions, min(20, len(self.questions)))
         
@@ -434,8 +447,37 @@ class TestPythonGUI:
         self.test_start_time = datetime.datetime.now()
         
         # Aktualizuj GUI
-        self.label_info.config(text=f"Pytanie 1/20")
+        total_questions = len(selected)
+        self.label_info.config(text=f"Pytanie 1/{total_questions}")
         self.btn_start.config(state='disabled')
+        self.btn_start_all.config(state='disabled')
+        self.btn_submit.config(state='normal')
+        self.btn_next.config(state='disabled')
+        
+        self.show_question(0)
+    
+    def start_test_all(self):
+        """Rozpocznij test ze wszystkimi pytaniami"""
+        # Użyj wszystkich pytań (przetasowanych)
+        selected = self.questions.copy()
+        random.shuffle(selected)
+        
+        self.current_test = {
+            'questions': selected,
+            'answers': [],
+            'correct': 0,
+            'start_time': datetime.datetime.now().isoformat()
+        }
+        
+        self.user_answers = []
+        self.current_question_index = 0
+        self.test_start_time = datetime.datetime.now()
+        
+        # Aktualizuj GUI
+        total_questions = len(selected)
+        self.label_info.config(text=f"Pytanie 1/{total_questions}")
+        self.btn_start.config(state='disabled')
+        self.btn_start_all.config(state='disabled')
         self.btn_submit.config(state='normal')
         self.btn_next.config(state='disabled')
         
@@ -564,8 +606,9 @@ class TestPythonGUI:
             self.radio_buttons.append(rb)
         
         # Aktualizuj info
+        total_questions = len(self.current_test['questions'])
         self.label_info.config(
-            text=f"Pytanie {index + 1}/20"
+            text=f"Pytanie {index + 1}/{total_questions}"
         )
         
         # Aktualizuj scrollowanie i przewiń na górę
@@ -754,6 +797,7 @@ Czas: {int(duration // 60)} min {int(duration % 60)} sek
         self.label_info.config(text="Kliknij 'Rozpocznij test' aby rozpocząć")
         
         self.btn_start.config(state='normal')
+        self.btn_start_all.config(state='normal')
         self.btn_submit.config(state='disabled')
         self.btn_next.config(state='disabled')
         self.btn_next.config(text="⏭ Następne pytanie")
