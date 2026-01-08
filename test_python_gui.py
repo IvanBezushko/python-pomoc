@@ -185,19 +185,20 @@ class TestPythonGUI:
         # Główna ramka z pytaniem - wewnątrz scrollowalnego obszaru
         self.frame_question = scrollable_frame
         
-        # Pytanie
+        # Pytanie - responsywne, dostosowuje się do zawartości
         self.text_question = Text(
             self.frame_question,
             wrap='word',
             font=font.Font(size=12),
             bg=COLOR_LIGHT,
             fg=COLOR_DARK,
-            height=3,
             relief='flat',
             padx=15,
-            pady=15
+            pady=15,
+            width=1,  # Minimalna szerokość, będzie się dostosowywać
+            height=1  # Minimalna wysokość, będzie się dostosowywać
         )
-        self.text_question.pack(fill='x', pady=(0, 10))
+        self.text_question.pack(fill='both', expand=True, pady=(0, 10))
         self.text_question.config(state='disabled')
         
         # Osobne pole dla kodu (monospace, jak w edytorze) - tworzymy ale ukryjemy domyślnie
@@ -505,6 +506,15 @@ class TestPythonGUI:
         self.text_question.config(state='normal')
         self.text_question.delete(1.0, 'end')
         self.text_question.insert(1.0, pytanie_display)
+        
+        # Oblicz liczbę linii i dostosuj wysokość dynamicznie
+        # Użyj update_idletasks aby zaktualizować rozmiar widgetu przed obliczeniem
+        self.text_question.update_idletasks()
+        num_lines = int(self.text_question.index('end-1c').split('.')[0])
+        # Większy zakres - min 4 linie, max 30 linii aby pomieścić długie pytania
+        question_height = max(4, min(30, num_lines + 2))
+        self.text_question.config(height=question_height)
+        
         self.text_question.config(state='disabled')
         
         # Usuń stare radio buttons
