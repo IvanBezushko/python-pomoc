@@ -522,9 +522,29 @@ class TestPythonGUI:
             rb.destroy()
         self.radio_buttons = []
         
+        # Losuj kolejność odpowiedzi
+        original_answers = question['odpowiedzi']
+        original_correct = question['prawidlowa']
+        
+        # Utwórz listę indeksów i przetasuj je
+        indices = list(range(len(original_answers)))
+        random.shuffle(indices)
+        
+        # Przetasuj odpowiedzi zgodnie z nową kolejnością
+        shuffled_answers = [original_answers[i] for i in indices]
+        
+        # Znajdź nowy indeks prawidłowej odpowiedzi
+        # original_correct wskazuje na oryginalną pozycję, musimy znaleźć gdzie jest teraz
+        shuffled_correct = indices.index(original_correct)
+        
+        # Zapisz przetasowane dane w pytaniu (jako pola tymczasowe)
+        question['_shuffled_answers'] = shuffled_answers
+        question['_shuffled_correct'] = shuffled_correct
+        question['_shuffle_mapping'] = indices  # mapowanie: nowy_indeks -> stary_indeks
+        
         # Utwórz nowe radio buttons - upewnij się, że są odznaczone
         self.answer_var.set("")  # Odznacz wszystkie - użyj istniejącej zmiennej
-        for i, odp in enumerate(question['odpowiedzi']):
+        for i, odp in enumerate(shuffled_answers):
             rb = Radiobutton(
                 self.frame_answers,
                 text=odp,
@@ -571,15 +591,29 @@ class TestPythonGUI:
         
         question = self.current_test['questions'][self.current_question_index]
         user_choice = int(selected)
-        correct_choice = question['prawidlowa']
+        
+        # Użyj przetasowanego indeksu prawidłowej odpowiedzi
+        if '_shuffled_correct' in question:
+            correct_choice = question['_shuffled_correct']
+            shuffled_answers = question['_shuffled_answers']
+        else:
+            # Fallback dla starych pytań (bez przetasowania)
+            correct_choice = question['prawidlowa']
+            shuffled_answers = question['odpowiedzi']
         
         is_correct = user_choice == correct_choice
         
-        # Zapisz odpowiedź
+        # Zapisz odpowiedź (używając oryginalnego indeksu dla historii)
+        original_user_choice = user_choice
+        original_correct_choice = question['prawidlowa']
+        if '_shuffle_mapping' in question:
+            # Konwertuj z powrotem na oryginalny indeks
+            original_user_choice = question['_shuffle_mapping'][user_choice]
+        
         self.user_answers.append({
             'question_id': question['id'],
-            'user_answer': user_choice,
-            'correct_answer': correct_choice,
+            'user_answer': original_user_choice,
+            'correct_answer': original_correct_choice,
             'is_correct': is_correct
         })
         
@@ -593,7 +627,7 @@ class TestPythonGUI:
                 fg=COLOR_CORRECT
             )
         else:
-            correct_text = question['odpowiedzi'][correct_choice]
+            correct_text = shuffled_answers[correct_choice]
             self.label_result.config(
                 text=f"✗ Niepoprawna odpowiedź. Prawidłowa: {correct_text}",
                 fg=COLOR_INCORRECT

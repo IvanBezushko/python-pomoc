@@ -100,7 +100,7 @@
       "Błąd",
       "None"
     ],
-    "prawidlowa": 0,
+    "prawidlowa": 1,
     "tlumaczenie": "Klasa `Pies` dziedziczy po `Zwierze` i nadpisuje metodę `dzwiek()`. Wywołanie `z.dzwiek()` używa metody z klasy `Pies`, nie z klasy bazowej (polimorfizm)."
   },
   {
@@ -113,7 +113,7 @@
       "math",
       "random"
     ],
-    "prawidlowa": 0,
+    "prawidlowa": 2,
     "tlumaczenie": "SciPy (Scientific Python) zawiera zaawansowane funkcje numeryczne: całkowanie, optymalizację, statystyki, przetwarzanie sygnałów. NumPy to podstawowe tablice, `math` to podstawowe funkcje matematyczne."
   },
   {
@@ -490,7 +490,7 @@
       "||",
       "|"
     ],
-    "prawidlowa": 0,
+    "prawidlowa": 1,
     "tlumaczenie": "Operator `or` to logiczne \"lub\". `and` to \"i\", `||` nie istnieje w Pythonie (to C/Java), `|` to operator bitowy."
   },
   {
@@ -633,7 +633,7 @@
       "Błąd",
       "{6}"
     ],
-    "prawidlowa": 0,
+    "prawidlowa": 1,
     "tlumaczenie": "`set` automatycznie usuwa duplikaty. `{1, 2, 2, 3, 3, 3}` zostaje zredukowane do `{1, 2, 3}` - każdy element występuje tylko raz."
   },
   {
@@ -646,7 +646,7 @@
       "NULL",
       "undefined"
     ],
-    "prawidlowa": 0,
+    "prawidlowa": 1,
     "tlumaczenie": "W Pythonie `None` reprezentuje brak wartości (odpowiednik `null` w innych językach). `null`, `NULL` i `undefined` nie istnieją w Pythonie (to z JavaScript/C/Java)."
   },
   {
@@ -659,7 +659,7 @@
       "Błąd",
       "Pusta wartość"
     ],
-    "prawidlowa": 0,
+    "prawidlowa": 1,
     "tlumaczenie": "Funkcja bez `return` zwraca `None` domyślnie. `pass` to tylko pusta instrukcja (syntaktyczna \"dźwignia\"), nie zwraca wartości."
   },
   {
@@ -711,7 +711,7 @@
       "0",
       "Błąd składni"
     ],
-    "prawidlowa": 0,
+    "prawidlowa": 1,
     "tlumaczenie": "Słownik `dct` ma tylko klucz `\"a\"`, nie ma `\"b\"`. Próba dostępu `dct[\"b\"]` rzuca `KeyError`. Aby uniknąć błędu, użyj `dct.get(\"b\")` (zwróci `None`) lub `dct.get(\"b\", 0)` (zwróci domyślną wartość)."
   },
   {
@@ -841,7 +841,7 @@
       "sqrt(16) pi",
       "4 3.14"
     ],
-    "prawidlowa": 0,
+    "prawidlowa": 2,
     "tlumaczenie": "`from math import sqrt, pi` importuje konkretne funkcje/zmienne. `sqrt(16)` zwraca `4.0` (float), `pi` to stała matematyczna `3.141592653589793`."
   },
   {
@@ -893,7 +893,7 @@
       "math.sqrt(9)",
       "3"
     ],
-    "prawidlowa": 0,
+    "prawidlowa": 2,
     "tlumaczenie": "`import math as m` importuje moduł `math` pod aliasem `m`. Teraz używamy `m.sqrt(9)` zamiast `math.sqrt(9)`. Wynik: `3.0` (float)."
   },
   {
@@ -945,7 +945,7 @@
       "AB",
       "A"
     ],
-    "prawidlowa": 0,
+    "prawidlowa": 1,
     "tlumaczenie": "Tryb `\"a\"` (append) dopisuje na końcu pliku, nie nadpisuje. Zawartość przed: `\"A\"\\n`. Po dopisaniu `\"B\"`: `\"A\"\\nB`."
   },
   {
@@ -1023,7 +1023,7 @@
       "Błąd",
       "0"
     ],
-    "prawidlowa": 0,
+    "prawidlowa": 3,
     "tlumaczenie": "Wątki współdzielą zmienną `liczba`, a operacja `liczba += 1` nie jest atomowa (składa się z odczytu, dodania, zapisu). Wątki mogą się wzajemnie nadpisywać, więc wynik może być mniejszy niż 10000. To problem race condition - trzeba użyć blokad (`Lock`)."
   },
   {
@@ -1036,7 +1036,7 @@
       "Funkcja w multiprocessing",
       "Nie istnieje w Pythonie"
     ],
-    "prawidlowa": 0,
+    "prawidlowa": 2,
     "tlumaczenie": "GIL to mechanizm w CPython, który pozwala tylko jednemu wątkowi wykonywać kod Pythona jednocześnie (nawet na wielordzeniowym CPU). To ogranicza efektywność wątków dla zadań CPU-bound. Procesy (`multiprocessing`) omijają GIL."
   },
   {
@@ -1049,7 +1049,7 @@
       "Błąd",
       "127.0.0.1"
     ],
-    "prawidlowa": 0,
+    "prawidlowa": 3,
     "tlumaczenie": "`bind((\"127.0.0.1\", 0))` wiąże socket z adresem IP, ale port `0` oznacza \"przydziel losowy dostępny port\". `getsockname()` zwraca tuple `(adres, port)`, więc `[1]` zwraca numer portu przydzielony przez system."
   },
   {
@@ -1140,7 +1140,7 @@
       "http",
       "web"
     ],
-    "prawidlowa": 0,
+    "prawidlowa": 2,
     "tlumaczenie": "Flask to framework webowy w Pythonie importowany jako `from flask import Flask`. Django to inny framework (większy, pełniejszy). `http` to moduł niskopoziomowy, `web` nie istnieje."
   },
   {
@@ -1153,7 +1153,7 @@
       "Wyświetli tylko \"Hello\"",
       "Nic nie zrobi"
     ],
-    "prawidlowa": 0,
+    "prawidlowa": 2,
     "tlumaczenie": "`app.run(debug=True)` uruchamia serwer deweloperski Flask na domyślnym porcie 5000. `@app.route(\"/\")` definiuje trasę dla głównej strony (URL `/`). Gdy otworzysz `http://localhost:5000/`, zobaczysz \"Hello\"."
   },
   {
@@ -1166,7 +1166,7 @@
       "assertIs(a, b)",
       "assertNone(x)"
     ],
-    "prawidlowa": 0,
+    "prawidlowa": 1,
     "tlumaczenie": "`self.assertEqual(a, b)` sprawdza czy `a == b`. `assertTrue(x)` sprawdza czy `x` jest `True`. `assertIs(a, b)` sprawdza czy `a is b`. `assertIsNone(x)` sprawdza czy `x is None`."
   },
   {
@@ -1192,7 +1192,7 @@
       "Plik JSON",
       "Nic"
     ],
-    "prawidlowa": 0,
+    "prawidlowa": 1,
     "tlumaczenie": "`json.loads(string_json)` parsuje string JSON i zwraca odpowiadający obiekt Pythona (dict, list, str, int, float, bool, None). `json.dumps()` robi odwrotnie - konwertuje obiekt Pythona do stringa."
   },
   {
@@ -1270,7 +1270,7 @@
       "[2, 4, 6]",
       "Błąd"
     ],
-    "prawidlowa": 0,
+    "prawidlowa": 1,
     "tlumaczenie": "List comprehension iteruje przez `range(3)` = `[0, 1, 2]` i dla każdego `x` wykonuje `x*2`. Wynik: `[0*2, 1*2, 2*2] = [0, 2, 4]`."
   },
   {
@@ -1361,7 +1361,7 @@
       "Przed\\nPo",
       "Błąd"
     ],
-    "prawidlowa": 0,
+    "prawidlowa": 1,
     "tlumaczenie": "Dekorator `@dekorator` opakowuje funkcję `hello()`. Wywołanie `hello()` faktycznie wywołuje `wrapper()`, który drukuje \"Przed\", wywołuje oryginalną `hello()` (drukuje \"Hello\"), potem \"Po\"."
   },
   {
@@ -1439,7 +1439,7 @@
       "Błąd",
       "None"
     ],
-    "prawidlowa": 0,
+    "prawidlowa": 1,
     "tlumaczenie": "`repr(obj)` wywołuje `obj.__repr__()`, która zwraca `\"Klasa()\"`. Gdyby nie było `__repr__`, Python użyłby domyślnej reprezentacji `<__main__.Klasa object at 0x...>`."
   },
   {
@@ -1517,7 +1517,7 @@
       "Błąd - brak self",
       "None"
     ],
-    "prawidlowa": 0,
+    "prawidlowa": 2,
     "tlumaczenie": "Metoda statyczna `@staticmethod` może być wywoływana bezpośrednio przez klasę bez tworzenia instancji. `Klasa.metoda(5)` działa i zwraca `5 * 2 = 10`. Nie potrzeba `self`."
   },
   {
@@ -1543,7 +1543,7 @@
       "None",
       "Klasa"
     ],
-    "prawidlowa": 0,
+    "prawidlowa": 3,
     "tlumaczenie": "Metoda klasowa `@classmethod` przyjmuje klasę jako pierwszy argument (`cls`). `cls.wartosc` odwołuje się do atrybutu klasy. `Klasa.zwroc()` wywołuje metodę i zwraca `10`."
   },
   {
@@ -1563,7 +1563,12 @@
     "id": 121,
     "typ": "kod",
     "pytanie": "Co zwróci ten kod?\n```python\nx = 10 % 3\nprint(x)\n```",
-    "odpowiedzi": ["1", "3", "0", "Błąd"],
+    "odpowiedzi": [
+      "1",
+      "3",
+      "0",
+      "Błąd"
+    ],
     "prawidlowa": 0,
     "tlumaczenie": "Operator `%` zwraca resztę z dzielenia. `10 % 3 = 1` (bo 10 = 3*3 + 1)."
   },
@@ -1571,7 +1576,12 @@
     "id": 122,
     "typ": "kod",
     "pytanie": "Co wyświetli ten kod?\n```python\nx = [1, 2, 3]\ny = x\nx.append(4)\nprint(y)\n```",
-    "odpowiedzi": ["[1, 2, 3, 4]", "[1, 2, 3]", "Błąd", "[4]"],
+    "odpowiedzi": [
+      "[1, 2, 3, 4]",
+      "[1, 2, 3]",
+      "Błąd",
+      "[4]"
+    ],
     "prawidlowa": 0,
     "tlumaczenie": "`y = x` tworzy referencję do tego samego obiektu, nie kopię. `x.append(4)` modyfikuje listę, więc `y` również ma `[1, 2, 3, 4]`."
   },
@@ -1579,7 +1589,12 @@
     "id": 123,
     "typ": "kod",
     "pytanie": "Co zwróci ten kod?\n```python\ndef fun(x, *args):\n    return len(args)\n\nprint(fun(1, 2, 3, 4))\n```",
-    "odpowiedzi": ["3", "4", "1", "Błąd"],
+    "odpowiedzi": [
+      "3",
+      "4",
+      "1",
+      "Błąd"
+    ],
     "prawidlowa": 0,
     "tlumaczenie": "`*args` przechwytuje dodatkowe argumenty pozycyjne. `fun(1, 2, 3, 4)` → `x=1`, `args=(2,3,4)`. `len(args) = 3`."
   },
@@ -1587,7 +1602,12 @@
     "id": 124,
     "typ": "kod",
     "pytanie": "Co zwróci ten kod?\n```python\ndef fun(**kwargs):\n    return len(kwargs)\n\nprint(fun(a=1, b=2, c=3))\n```",
-    "odpowiedzi": ["3", "0", "Błąd", "None"],
+    "odpowiedzi": [
+      "3",
+      "0",
+      "Błąd",
+      "None"
+    ],
     "prawidlowa": 0,
     "tlumaczenie": "`**kwargs` przechwytuje nazwane argumenty jako słownik. `fun(a=1, b=2, c=3)` → `kwargs={'a':1, 'b':2, 'c':3}`, `len(kwargs) = 3`."
   },
@@ -1595,7 +1615,12 @@
     "id": 125,
     "typ": "kod",
     "pytanie": "Co wyświetli ten kod?\n```python\nx = {1, 2, 3}\ny = {2, 3, 4}\nprint(x | y)\n```",
-    "odpowiedzi": ["{1, 2, 3, 4}", "{2, 3}", "{1, 4}", "Błąd"],
+    "odpowiedzi": [
+      "{1, 2, 3, 4}",
+      "{2, 3}",
+      "{1, 4}",
+      "Błąd"
+    ],
     "prawidlowa": 0,
     "tlumaczenie": "Operator `|` na zbiorach to suma (union). `x | y` zwraca wszystkie elementy z obu zbiorów: `{1, 2, 3, 4}`."
   },
@@ -1603,15 +1628,25 @@
     "id": 126,
     "typ": "kod",
     "pytanie": "Co zwróci ten kod?\n```python\nx = [1, 2, 3, 4, 5]\nprint(x[1:3])\n```",
-    "odpowiedzi": ["[2, 3]", "[1, 2]", "[1, 2, 3]", "Błąd"],
-    "prawidlowa": 0,
+    "odpowiedzi": [
+      "[2, 3]",
+      "[1, 2]",
+      "[1, 2, 3]",
+      "Błąd"
+    ],
+    "prawidlowa": 2,
     "tlumaczenie": "Slice `[1:3]` zwraca elementy od indeksu 1 (włącznie) do 3 (wyłącznie). `[1, 2, 3, 4, 5][1:3] = [2, 3]`."
   },
   {
     "id": 127,
     "typ": "kod",
     "pytanie": "Co wyświetli ten kod?\n```python\nx = [1, 2, 3]\nprint(x[::-1])\n```",
-    "odpowiedzi": ["[3, 2, 1]", "[1, 2, 3]", "[3]", "Błąd"],
+    "odpowiedzi": [
+      "[3, 2, 1]",
+      "[1, 2, 3]",
+      "[3]",
+      "Błąd"
+    ],
     "prawidlowa": 0,
     "tlumaczenie": "Slice `[::-1]` odwraca kolejność elementów. `[1, 2, 3][::-1] = [3, 2, 1]`."
   },
@@ -1619,7 +1654,12 @@
     "id": 128,
     "typ": "kod",
     "pytanie": "Co zwróci ten kod?\n```python\nx = \"hello\"\nprint(x.upper())\n```",
-    "odpowiedzi": ["HELLO", "hello", "Błąd", "None"],
+    "odpowiedzi": [
+      "HELLO",
+      "hello",
+      "Błąd",
+      "None"
+    ],
     "prawidlowa": 0,
     "tlumaczenie": "`.upper()` konwertuje string na wielkie litery. `\"hello\".upper() = \"HELLO\"`."
   },
@@ -1627,7 +1667,12 @@
     "id": 129,
     "typ": "kod",
     "pytanie": "Co wyświetli ten kod?\n```python\nx = [1, 2, 3]\nprint(2 in x)\n```",
-    "odpowiedzi": ["True", "False", "Błąd", "None"],
+    "odpowiedzi": [
+      "True",
+      "False",
+      "Błąd",
+      "None"
+    ],
     "prawidlowa": 0,
     "tlumaczenie": "Operator `in` sprawdza czy element jest w sekwencji. `2 in [1, 2, 3] = True` (2 jest w liście)."
   },
@@ -1635,7 +1680,12 @@
     "id": 130,
     "typ": "kod",
     "pytanie": "Co zwróci ten kod?\n```python\nx = \"hello\"\nprint(x.count('l'))\n```",
-    "odpowiedzi": ["2", "1", "0", "Błąd"],
+    "odpowiedzi": [
+      "2",
+      "1",
+      "0",
+      "Błąd"
+    ],
     "prawidlowa": 0,
     "tlumaczenie": "`.count(sub)` zwraca liczbę wystąpień `sub` w stringu. `\"hello\".count('l') = 2` (dwa 'l')."
   },
@@ -1643,7 +1693,12 @@
     "id": 131,
     "typ": "kod",
     "pytanie": "Co wyświetli ten kod?\n```python\nx = [1, 2, 3]\ny = [4, 5]\nprint(x + y)\n```",
-    "odpowiedzi": ["[1, 2, 3, 4, 5]", "[5, 7]", "[1, 2, 3]", "Błąd"],
+    "odpowiedzi": [
+      "[1, 2, 3, 4, 5]",
+      "[5, 7]",
+      "[1, 2, 3]",
+      "Błąd"
+    ],
     "prawidlowa": 0,
     "tlumaczenie": "Operator `+` na listach łączy je w jedną listę. `[1, 2, 3] + [4, 5] = [1, 2, 3, 4, 5]`."
   },
@@ -1651,7 +1706,12 @@
     "id": 132,
     "typ": "kod",
     "pytanie": "Co zwróci ten kod?\n```python\nx = {1, 2, 3}\ny = {2, 3, 4}\nprint(x - y)\n```",
-    "odpowiedzi": ["{1}", "{2, 3}", "{4}", "Błąd"],
+    "odpowiedzi": [
+      "{1}",
+      "{2, 3}",
+      "{4}",
+      "Błąd"
+    ],
     "prawidlowa": 0,
     "tlumaczenie": "Operator `-` na zbiorach to różnica (difference). `x - y` zwraca elementy z `x`, których nie ma w `y`: `{1}`."
   },
@@ -1659,7 +1719,12 @@
     "id": 133,
     "typ": "kod",
     "pytanie": "Co zwróci ten kod?\n```python\nx = \"hello\"\nprint(len(x))\n```",
-    "odpowiedzi": ["5", "4", "6", "Błąd"],
+    "odpowiedzi": [
+      "5",
+      "4",
+      "6",
+      "Błąd"
+    ],
     "prawidlowa": 0,
     "tlumaczenie": "`len()` zwraca liczbę znaków w stringu. `len(\"hello\") = 5` (h-e-l-l-o)."
   },
@@ -1667,15 +1732,25 @@
     "id": 134,
     "typ": "kod",
     "pytanie": "Co wyświetli ten kod?\n```python\nx = [1, 2, 3]\nprint(x.pop())\n```",
-    "odpowiedzi": ["3", "1", "[1, 2]", "Błąd"],
-    "prawidlowa": 0,
+    "odpowiedzi": [
+      "3",
+      "1",
+      "[1, 2]",
+      "Błąd"
+    ],
+    "prawidlowa": 2,
     "tlumaczenie": "`.pop()` usuwa i zwraca ostatni element listy. `[1, 2, 3].pop() = 3`, lista staje się `[1, 2]`."
   },
   {
     "id": 135,
     "typ": "kod",
     "pytanie": "Co zwróci ten kod?\n```python\nx = \"Python\"\nprint(x[1:4])\n```",
-    "odpowiedzi": ["yth", "Pyth", "ytho", "Błąd"],
+    "odpowiedzi": [
+      "yth",
+      "Pyth",
+      "ytho",
+      "Błąd"
+    ],
     "prawidlowa": 0,
     "tlumaczenie": "Slice `[1:4]` zwraca znaki od indeksu 1 (włącznie) do 4 (wyłącznie). `\"Python\"[1:4] = \"yth\"`."
   },
@@ -1683,7 +1758,12 @@
     "id": 136,
     "typ": "kod",
     "pytanie": "Co wyświetli ten kod?\n```python\nx = [1, 2, 3]\nprint(max(x))\n```",
-    "odpowiedzi": ["3", "1", "2", "Błąd"],
+    "odpowiedzi": [
+      "3",
+      "1",
+      "2",
+      "Błąd"
+    ],
     "prawidlowa": 0,
     "tlumaczenie": "`max()` zwraca największy element w sekwencji. `max([1, 2, 3]) = 3`."
   },
@@ -1691,7 +1771,12 @@
     "id": 137,
     "typ": "kod",
     "pytanie": "Co zwróci ten kod?\n```python\nx = [1, 2, 3]\nprint(min(x))\n```",
-    "odpowiedzi": ["1", "3", "2", "Błąd"],
+    "odpowiedzi": [
+      "1",
+      "3",
+      "2",
+      "Błąd"
+    ],
     "prawidlowa": 0,
     "tlumaczenie": "`min()` zwraca najmniejszy element w sekwencji. `min([1, 2, 3]) = 1`."
   },
@@ -1699,7 +1784,12 @@
     "id": 138,
     "typ": "kod",
     "pytanie": "Co wyświetli ten kod?\n```python\nx = [1, 2, 3]\nprint(sum(x))\n```",
-    "odpowiedzi": ["6", "3", "1", "Błąd"],
+    "odpowiedzi": [
+      "6",
+      "3",
+      "1",
+      "Błąd"
+    ],
     "prawidlowa": 0,
     "tlumaczenie": "`sum()` sumuje wszystkie elementy sekwencji. `sum([1, 2, 3]) = 1 + 2 + 3 = 6`."
   },
@@ -1707,7 +1797,12 @@
     "id": 139,
     "typ": "kod",
     "pytanie": "Co zwróci ten kod?\n```python\nx = \"hello\"\nprint(x.find('l'))\n```",
-    "odpowiedzi": ["2", "3", "-1", "Błąd"],
+    "odpowiedzi": [
+      "2",
+      "3",
+      "-1",
+      "Błąd"
+    ],
     "prawidlowa": 0,
     "tlumaczenie": "`.find(sub)` zwraca indeks pierwszego wystąpienia `sub` w stringu. `\"hello\".find('l') = 2` (pierwsze 'l' jest na pozycji 2)."
   },
@@ -1715,15 +1810,25 @@
     "id": 140,
     "typ": "kod",
     "pytanie": "Co wyświetli ten kod?\n```python\nx = \"hello\"\nprint(x.split('l'))\n```",
-    "odpowiedzi": ["['he', 'o']", "['h', 'e', 'l', 'l', 'o']", "['hello']", "Błąd"],
-    "prawidlowa": 0,
+    "odpowiedzi": [
+      "['he', 'o']",
+      "['h', 'e', 'l', 'l', 'o']",
+      "['hello']",
+      "Błąd"
+    ],
+    "prawidlowa": 2,
     "tlumaczenie": "`.split(sep)` dzieli string na listę używając separatora. `\"hello\".split('l') = ['he', '', 'o']` (dzieli na 'l')."
   },
   {
     "id": 141,
     "typ": "kod",
     "pytanie": "Co zwróci ten kod?\n```python\nx = \"hello\"\nprint(x.startswith('he'))\n```",
-    "odpowiedzi": ["True", "False", "Błąd", "None"],
+    "odpowiedzi": [
+      "True",
+      "False",
+      "Błąd",
+      "None"
+    ],
     "prawidlowa": 0,
     "tlumaczenie": "`.startswith(prefix)` sprawdza czy string zaczyna się od prefiksu. `\"hello\".startswith('he') = True`."
   },
@@ -1731,7 +1836,12 @@
     "id": 142,
     "typ": "kod",
     "pytanie": "Co wyświetli ten kod?\n```python\nx = \"hello\"\nprint(x.endswith('lo'))\n```",
-    "odpowiedzi": ["True", "False", "Błąd", "None"],
+    "odpowiedzi": [
+      "True",
+      "False",
+      "Błąd",
+      "None"
+    ],
     "prawidlowa": 0,
     "tlumaczenie": "`.endswith(suffix)` sprawdza czy string kończy się sufiksem. `\"hello\".endswith('lo') = True`."
   },
@@ -1739,7 +1849,12 @@
     "id": 143,
     "typ": "kod",
     "pytanie": "Co zwróci ten kod?\n```python\nx = \"hello\"\nprint(x.isalpha())\n```",
-    "odpowiedzi": ["True", "False", "Błąd", "None"],
+    "odpowiedzi": [
+      "True",
+      "False",
+      "Błąd",
+      "None"
+    ],
     "prawidlowa": 0,
     "tlumaczenie": "`.isalpha()` sprawdza czy wszystkie znaki w stringu to litery. `\"hello\".isalpha() = True` (wszystkie to litery)."
   },
@@ -1747,7 +1862,12 @@
     "id": 144,
     "typ": "kod",
     "pytanie": "Co wyświetli ten kod?\n```python\nx = \"123\"\nprint(x.isdigit())\n```",
-    "odpowiedzi": ["True", "False", "Błąd", "None"],
+    "odpowiedzi": [
+      "True",
+      "False",
+      "Błąd",
+      "None"
+    ],
     "prawidlowa": 0,
     "tlumaczenie": "`.isdigit()` sprawdza czy wszystkie znaki w stringu to cyfry. `\"123\".isdigit() = True`."
   },
@@ -1755,7 +1875,12 @@
     "id": 145,
     "typ": "kod",
     "pytanie": "Co zwróci ten kod?\n```python\nx = [1, 2, 3]\nprint(x.index(2))\n```",
-    "odpowiedzi": ["1", "2", "0", "Błąd"],
+    "odpowiedzi": [
+      "1",
+      "2",
+      "0",
+      "Błąd"
+    ],
     "prawidlowa": 0,
     "tlumaczenie": "`.index(value)` zwraca indeks pierwszego wystąpienia wartości. `[1, 2, 3].index(2) = 1` (2 jest na pozycji 1)."
   },
@@ -1763,7 +1888,12 @@
     "id": 146,
     "typ": "kod",
     "pytanie": "Co wyświetli ten kod?\n```python\nx = \"hello\"\nprint(x.replace('l', 'L'))\n```",
-    "odpowiedzi": ["heLLo", "hello", "heLlo", "Błąd"],
+    "odpowiedzi": [
+      "heLLo",
+      "hello",
+      "heLlo",
+      "Błąd"
+    ],
     "prawidlowa": 0,
     "tlumaczenie": "`.replace(old, new)` zamienia wszystkie wystąpienia `old` na `new`. `\"hello\".replace('l', 'L') = \"heLLo\"`."
   },
@@ -1771,7 +1901,12 @@
     "id": 147,
     "typ": "kod",
     "pytanie": "Co zwróci ten kod?\n```python\nx = [1, 2, 3]\ny = x[:]\nx.append(4)\nprint(y)\n```",
-    "odpowiedzi": ["[1, 2, 3]", "[1, 2, 3, 4]", "Błąd", "[4]"],
+    "odpowiedzi": [
+      "[1, 2, 3]",
+      "[1, 2, 3, 4]",
+      "Błąd",
+      "[4]"
+    ],
     "prawidlowa": 0,
     "tlumaczenie": "`y = x[:]` tworzy płytką kopię (shallow copy) listy. `x.append(4)` modyfikuje tylko `x`, `y` pozostaje `[1, 2, 3]`."
   },
@@ -1779,7 +1914,12 @@
     "id": 148,
     "typ": "kod",
     "pytanie": "Co wyświetli ten kod?\n```python\nx = [1, 2, 3]\nprint(x.copy())\n```",
-    "odpowiedzi": ["[1, 2, 3]", "[1, 2]", "Błąd", "[3]"],
+    "odpowiedzi": [
+      "[1, 2, 3]",
+      "[1, 2]",
+      "Błąd",
+      "[3]"
+    ],
     "prawidlowa": 0,
     "tlumaczenie": "`.copy()` tworzy płytką kopię listy. Zwraca nową listę z tymi samymi elementami: `[1, 2, 3]`."
   },
@@ -1787,7 +1927,12 @@
     "id": 149,
     "typ": "kod",
     "pytanie": "Co zwróci ten kod?\n```python\nx = \"hello\"\nprint(x.title())\n```",
-    "odpowiedzi": ["Hello", "HELLO", "hello", "Błąd"],
+    "odpowiedzi": [
+      "Hello",
+      "HELLO",
+      "hello",
+      "Błąd"
+    ],
     "prawidlowa": 0,
     "tlumaczenie": "`.title()` konwertuje pierwsze litery każdego słowa na wielkie. `\"hello\".title() = \"Hello\"`."
   },
@@ -1795,7 +1940,12 @@
     "id": 150,
     "typ": "kod",
     "pytanie": "Co wyświetli ten kod?\n```python\nx = \"hello\"\nprint(x.strip())\n```",
-    "odpowiedzi": ["hello", "hello ", " he llo", "Błąd"],
+    "odpowiedzi": [
+      "hello",
+      "hello ",
+      " he llo",
+      "Błąd"
+    ],
     "prawidlowa": 0,
     "tlumaczenie": "`.strip()` usuwa białe znaki z początku i końca stringu. `\"hello\".strip() = \"hello\"` (jeśli nie ma białych znaków, zwraca bez zmian)."
   },
@@ -1803,7 +1953,12 @@
     "id": 151,
     "typ": "kod",
     "pytanie": "Co zwróci ten kod?\n```python\nx = \"hello\"\nprint(x.join(['a', 'b', 'c']))\n```",
-    "odpowiedzi": ["ahellobhelloc", "helloabc", "['a', 'b', 'c']", "Błąd"],
+    "odpowiedzi": [
+      "ahellobhelloc",
+      "helloabc",
+      "['a', 'b', 'c']",
+      "Błąd"
+    ],
     "prawidlowa": 0,
     "tlumaczenie": "`.join(iterable)` łączy elementy iterable używając stringa jako separatora. `\"hello\".join(['a', 'b', 'c']) = \"ahellobhelloc\"`."
   },
@@ -1811,15 +1966,25 @@
     "id": 152,
     "typ": "kod",
     "pytanie": "Co wyświetli ten kod?\n```python\nx = [1, 2, 3]\nprint(x.insert(1, 10))\n```",
-    "odpowiedzi": ["None", "[1, 10, 2, 3]", "[1, 2, 3]", "Błąd"],
-    "prawidlowa": 0,
+    "odpowiedzi": [
+      "None",
+      "[1, 10, 2, 3]",
+      "[1, 2, 3]",
+      "Błąd"
+    ],
+    "prawidlowa": 1,
     "tlumaczenie": "`.insert(index, value)` wstawia wartość na pozycję index, modyfikuje listę w miejscu i zwraca `None`. Lista staje się `[1, 10, 2, 3]`."
   },
   {
     "id": 153,
     "typ": "kod",
     "pytanie": "Co zwróci ten kod?\n```python\nx = [1, 2, 3]\nprint(x.reverse())\n```",
-    "odpowiedzi": ["None", "[3, 2, 1]", "[1, 2, 3]", "Błąd"],
+    "odpowiedzi": [
+      "None",
+      "[3, 2, 1]",
+      "[1, 2, 3]",
+      "Błąd"
+    ],
     "prawidlowa": 0,
     "tlumaczenie": "`.reverse()` modyfikuje listę w miejscu i zwraca `None`. Aby uzyskać odwróconą listę jako nową, użyj `reversed()` lub `[::-1]`."
   },
@@ -1827,7 +1992,12 @@
     "id": 154,
     "typ": "kod",
     "pytanie": "Co wyświetli ten kod?\n```python\nx = [3, 1, 2]\nprint(sorted(x))\n```",
-    "odpowiedzi": ["[1, 2, 3]", "[3, 1, 2]", "None", "Błąd"],
+    "odpowiedzi": [
+      "[1, 2, 3]",
+      "[3, 1, 2]",
+      "None",
+      "Błąd"
+    ],
     "prawidlowa": 0,
     "tlumaczenie": "`sorted()` zwraca nową posortowaną listę, nie modyfikuje oryginału. `sorted([3, 1, 2]) = [1, 2, 3]`."
   },
@@ -1835,7 +2005,12 @@
     "id": 155,
     "typ": "kod",
     "pytanie": "Co zwróci ten kod?\n```python\nx = [1, 2, 3]\nprint(all(x))\n```",
-    "odpowiedzi": ["True", "False", "Błąd", "None"],
+    "odpowiedzi": [
+      "True",
+      "False",
+      "Błąd",
+      "None"
+    ],
     "prawidlowa": 0,
     "tlumaczenie": "`all(iterable)` zwraca `True` jeśli wszystkie elementy są truthy. `all([1, 2, 3]) = True` (wszystkie są truthy)."
   },
@@ -1843,7 +2018,12 @@
     "id": 156,
     "typ": "kod",
     "pytanie": "Co wyświetli ten kod?\n```python\nx = [1, 0, 3]\nprint(any(x))\n```",
-    "odpowiedzi": ["True", "False", "Błąd", "None"],
+    "odpowiedzi": [
+      "True",
+      "False",
+      "Błąd",
+      "None"
+    ],
     "prawidlowa": 0,
     "tlumaczenie": "`any(iterable)` zwraca `True` jeśli przynajmniej jeden element jest truthy. `any([1, 0, 3]) = True` (są elementy truthy)."
   },
@@ -1851,7 +2031,12 @@
     "id": 157,
     "typ": "kod",
     "pytanie": "Co zwróci ten kod?\n```python\nx = \"hello\"\nprint(x[0])\n```",
-    "odpowiedzi": ["h", "e", "hello", "Błąd"],
+    "odpowiedzi": [
+      "h",
+      "e",
+      "hello",
+      "Błąd"
+    ],
     "prawidlowa": 0,
     "tlumaczenie": "Dostęp do znaku w stringu przez indeks. `x[0]` zwraca pierwszy znak: `'h'`."
   },
@@ -1859,7 +2044,12 @@
     "id": 158,
     "typ": "kod",
     "pytanie": "Co wyświetli ten kod?\n```python\nx = (1, 2, 3)\nprint(x[0])\n```",
-    "odpowiedzi": ["1", "2", "(1,)", "Błąd"],
+    "odpowiedzi": [
+      "1",
+      "2",
+      "(1,)",
+      "Błąd"
+    ],
     "prawidlowa": 0,
     "tlumaczenie": "Tuple można indeksować tak jak listy. `x[0]` zwraca pierwszy element: `1`."
   },
@@ -1867,15 +2057,25 @@
     "id": 159,
     "typ": "kod",
     "pytanie": "Co zwróci ten kod?\n```python\ndct = dict(a=1, b=2)\nprint(dct['a'])\n```",
-    "odpowiedzi": ["1", "a", "{'a': 1}", "Błąd"],
-    "prawidlowa": 0,
+    "odpowiedzi": [
+      "1",
+      "a",
+      "{'a': 1}",
+      "Błąd"
+    ],
+    "prawidlowa": 1,
     "tlumaczenie": "Dostęp do wartości w słowniku przez klucz. `dct['a']` zwraca wartość dla klucza `'a'`: `1`."
   },
   {
     "id": 160,
     "typ": "kod",
     "pytanie": "Co wyświetli ten kod?\n```python\nx = \"Python\"\nprint(x.lower())\n```",
-    "odpowiedzi": ["python", "PYTHON", "Python", "Błąd"],
+    "odpowiedzi": [
+      "python",
+      "PYTHON",
+      "Python",
+      "Błąd"
+    ],
     "prawidlowa": 0,
     "tlumaczenie": "`.lower()` konwertuje string na małe litery. `\"Python\".lower() = \"python\"`."
   },
@@ -1883,7 +2083,12 @@
     "id": 161,
     "typ": "kod",
     "pytanie": "Co zwróci ten kod?\n```python\nx = \"hello world\"\nprint(x.split())\n```",
-    "odpowiedzi": ["['hello', 'world']", "['h', 'e', 'l', 'l', 'o']", "['hello world']", "Błąd"],
+    "odpowiedzi": [
+      "['hello', 'world']",
+      "['h', 'e', 'l', 'l', 'o']",
+      "['hello world']",
+      "Błąd"
+    ],
     "prawidlowa": 0,
     "tlumaczenie": "`.split()` bez argumentu dzieli string na listę używając białych znaków jako separatora. `\"hello world\".split() = ['hello', 'world']`."
   },
@@ -1891,7 +2096,12 @@
     "id": 162,
     "typ": "kod",
     "pytanie": "Co wyświetli ten kod?\n```python\nx = [1, 2, 3]\nprint(len(x))\n```",
-    "odpowiedzi": ["3", "2", "1", "Błąd"],
+    "odpowiedzi": [
+      "3",
+      "2",
+      "1",
+      "Błąd"
+    ],
     "prawidlowa": 0,
     "tlumaczenie": "`len()` zwraca liczbę elementów w sekwencji. `len([1, 2, 3]) = 3`."
   },
@@ -1899,7 +2109,12 @@
     "id": 163,
     "typ": "kod",
     "pytanie": "Co zwróci ten kod?\n```python\nx = {1, 2, 3}\nprint(len(x))\n```",
-    "odpowiedzi": ["3", "2", "1", "Błąd"],
+    "odpowiedzi": [
+      "3",
+      "2",
+      "1",
+      "Błąd"
+    ],
     "prawidlowa": 0,
     "tlumaczenie": "`len()` zwraca liczbę elementów w zbiorze. `len({1, 2, 3}) = 3`."
   },
@@ -1907,7 +2122,12 @@
     "id": 164,
     "typ": "kod",
     "pytanie": "Co wyświetli ten kod?\n```python\nx = {\"a\": 1, \"b\": 2}\nprint(len(x))\n```",
-    "odpowiedzi": ["2", "1", "3", "Błąd"],
+    "odpowiedzi": [
+      "2",
+      "1",
+      "3",
+      "Błąd"
+    ],
     "prawidlowa": 0,
     "tlumaczenie": "`len()` zwraca liczbę par klucz-wartość w słowniku. `len({\"a\": 1, \"b\": 2}) = 2`."
   },
@@ -1915,7 +2135,12 @@
     "id": 165,
     "typ": "teoria",
     "pytanie": "Co to jest scope (zakres zmiennej)?",
-    "odpowiedzi": ["Obszar gdzie zmienna jest dostępna", "Funkcja", "Klasa", "Moduł"],
+    "odpowiedzi": [
+      "Obszar gdzie zmienna jest dostępna",
+      "Funkcja",
+      "Klasa",
+      "Moduł"
+    ],
     "prawidlowa": 0,
     "tlumaczenie": "Scope (zakres) to obszar, gdzie zmienna jest dostępna. W Pythonie: Local → Enclosing → Global → Built-in (LEGB)."
   },
@@ -1923,7 +2148,12 @@
     "id": 166,
     "typ": "kod",
     "pytanie": "Co zwróci ten kod?\n```python\ndef fun():\n    x = 10\n    return x\n\nprint(fun())\n```",
-    "odpowiedzi": ["10", "None", "Błąd", "x"],
+    "odpowiedzi": [
+      "10",
+      "None",
+      "Błąd",
+      "x"
+    ],
     "prawidlowa": 0,
     "tlumaczenie": "Zmienna `x` jest lokalna w funkcji. `return x` zwraca `10`. Funkcja zwraca `10`."
   },
@@ -1931,7 +2161,12 @@
     "id": 167,
     "typ": "kod",
     "pytanie": "Co wyświetli ten kod?\n```python\nx = 5\ndef fun():\n    print(x)\n\nfun()\n```",
-    "odpowiedzi": ["5", "None", "Błąd", "x"],
+    "odpowiedzi": [
+      "5",
+      "None",
+      "Błąd",
+      "x"
+    ],
     "prawidlowa": 0,
     "tlumaczenie": "Zmienna `x` jest globalna. Funkcja może odczytać zmienną globalną, jeśli nie ma lokalnej o tej samej nazwie. Wyświetla `5`."
   },
@@ -1939,7 +2174,12 @@
     "id": 168,
     "typ": "kod",
     "pytanie": "Co zwróci ten kod?\n```python\nx = 5\ndef fun():\n    x = 10\n    return x\n\nprint(fun(), x)\n```",
-    "odpowiedzi": ["10 5", "5 5", "10 10", "Błąd"],
+    "odpowiedzi": [
+      "10 5",
+      "5 5",
+      "10 10",
+      "Błąd"
+    ],
     "prawidlowa": 0,
     "tlumaczenie": "`x = 10` w funkcji tworzy lokalną zmienną, która przesłania globalną. Funkcja zwraca `10`, ale globalna `x` pozostaje `5`. Wynik: `10 5`."
   },
@@ -1947,7 +2187,12 @@
     "id": 169,
     "typ": "kod",
     "pytanie": "Co wyświetli ten kod?\n```python\nx = [1, 2]\ny = [1, 2]\nprint(x == y, x is y)\n```",
-    "odpowiedzi": ["True False", "True True", "False False", "Błąd"],
+    "odpowiedzi": [
+      "True False",
+      "True True",
+      "False False",
+      "Błąd"
+    ],
     "prawidlowa": 0,
     "tlumaczenie": "`==` porównuje wartości: `x == y` → `True` (te same elementy). `is` porównuje tożsamość obiektów: `x is y` → `False` (różne obiekty w pamięci)."
   },
@@ -1955,7 +2200,12 @@
     "id": 170,
     "typ": "kod",
     "pytanie": "Co zwróci ten kod?\n```python\ntup = (1, 2, [3, 4])\ntup[2].append(5)\nprint(tup)\n```",
-    "odpowiedzi": ["(1, 2, [3, 4, 5])", "Błąd - tuple jest niemutowalna", "(1, 2, [3, 4])", "Błąd"],
+    "odpowiedzi": [
+      "(1, 2, [3, 4, 5])",
+      "Błąd - tuple jest niemutowalna",
+      "(1, 2, [3, 4])",
+      "Błąd"
+    ],
     "prawidlowa": 0,
     "tlumaczenie": "Tuple jest niemutowalna (nie można zmieniać elementów), ale elementy tuple mogą być mutowalne. Lista `[3,4]` jest mutowalna, więc można ją modyfikować: `[3,4,5]`."
   },
@@ -1963,7 +2213,12 @@
     "id": 171,
     "typ": "teoria",
     "pytanie": "Które typy danych w Pythonie są mutowalne?",
-    "odpowiedzi": ["list, dict, set", "tuple, str, int", "wszystkie", "żadne"],
+    "odpowiedzi": [
+      "list, dict, set",
+      "tuple, str, int",
+      "wszystkie",
+      "żadne"
+    ],
     "prawidlowa": 0,
     "tlumaczenie": "Mutowalne (mutable): `list`, `dict`, `set`. Niemutowalne (immutable): `int`, `float`, `str`, `tuple`, `frozenset`, `bool`, `None`."
   },
@@ -1971,15 +2226,25 @@
     "id": 172,
     "typ": "kod",
     "pytanie": "Co wyświetli ten kod?\n```python\nx = \"hello\"\ny = x\nx = \"world\"\nprint(y)\n```",
-    "odpowiedzi": ["hello", "world", "Błąd", "None"],
-    "prawidlowa": 0,
+    "odpowiedzi": [
+      "hello",
+      "world",
+      "Błąd",
+      "None"
+    ],
+    "prawidlowa": 1,
     "tlumaczenie": "String jest niemutowalny. `x = \"world\"` tworzy nowy obiekt string, nie modyfikuje poprzedniego. `y` nadal wskazuje na `\"hello\"`."
   },
   {
     "id": 173,
     "typ": "kod",
     "pytanie": "Co zwróci ten kod?\n```python\ndef fun(x=[]):\n    x.append(1)\n    return x\n\nprint(fun())\nprint(fun())\n```",
-    "odpowiedzi": ["[1]\\n[1, 1]", "[1]\\n[1]", "[1, 1]\\n[1, 1]", "Błąd"],
+    "odpowiedzi": [
+      "[1]\\n[1, 1]",
+      "[1]\\n[1]",
+      "[1, 1]\\n[1, 1]",
+      "Błąd"
+    ],
     "prawidlowa": 0,
     "tlumaczenie": "Argument domyślny `x=[]` jest ewaluowany raz przy definicji funkcji. Ta sama lista jest używana w każdym wywołaniu, więc przy drugim wywołaniu lista ma już `[1]`, dodaje kolejne `1`: `[1, 1]`."
   },
@@ -1987,7 +2252,12 @@
     "id": 174,
     "typ": "teoria",
     "pytanie": "Dlaczego nie powinno się używać mutowalnych obiektów jako argumentów domyślnych?",
-    "odpowiedzi": ["Bo są ewaluowane raz i współdzielone między wywołaniami", "Bo są wolne", "Bo nie działają", "Nie ma takiego problemu"],
+    "odpowiedzi": [
+      "Bo są ewaluowane raz i współdzielone między wywołaniami",
+      "Bo są wolne",
+      "Bo nie działają",
+      "Nie ma takiego problemu"
+    ],
     "prawidlowa": 0,
     "tlumaczenie": "Mutowalne obiekty jako argumenty domyślne są ewaluowane tylko raz przy definicji funkcji i współdzielone między wszystkimi wywołaniami. To prowadzi do niespodziewanych zachowań. Użyj `None` i sprawdź wewnątrz funkcji."
   },
@@ -1995,7 +2265,12 @@
     "id": 175,
     "typ": "kod",
     "pytanie": "Co wyświetli ten kod?\n```python\nx = lambda a, b: a + b\nprint(x(2, 3))\n```",
-    "odpowiedzi": ["5", "6", "Błąd", "None"],
+    "odpowiedzi": [
+      "5",
+      "6",
+      "Błąd",
+      "None"
+    ],
     "prawidlowa": 0,
     "tlumaczenie": "Lambda to anonimowa funkcja. `lambda a, b: a + b` dodaje argumenty. `x(2, 3) = 2 + 3 = 5`."
   },
@@ -2003,7 +2278,12 @@
     "id": 176,
     "typ": "kod",
     "pytanie": "Co zwróci ten kod?\n```python\nwynik = list(map(lambda x: x**2, [2, 3, 4]))\nprint(wynik)\n```",
-    "odpowiedzi": ["[4, 9, 16]", "[2, 3, 4]", "[4, 6, 8]", "Błąd"],
+    "odpowiedzi": [
+      "[4, 9, 16]",
+      "[2, 3, 4]",
+      "[4, 6, 8]",
+      "Błąd"
+    ],
     "prawidlowa": 0,
     "tlumaczenie": "`map` stosuje funkcję `lambda x: x**2` do każdego elementu. `[2**2, 3**2, 4**2] = [4, 9, 16]`."
   },
@@ -2011,7 +2291,12 @@
     "id": 177,
     "typ": "kod",
     "pytanie": "Co wyświetli ten kod?\n```python\nwynik = list(filter(lambda x: x > 3, [1, 4, 2, 5, 3]))\nprint(wynik)\n```",
-    "odpowiedzi": ["[4, 5]", "[1, 4, 2, 5, 3]", "[3]", "Błąd"],
+    "odpowiedzi": [
+      "[4, 5]",
+      "[1, 4, 2, 5, 3]",
+      "[3]",
+      "Błąd"
+    ],
     "prawidlowa": 0,
     "tlumaczenie": "`filter` z warunkiem `x > 3` filtruje elementy większe od 3: `[4, 5]`."
   },
@@ -2019,7 +2304,12 @@
     "id": 178,
     "typ": "kod",
     "pytanie": "Co zwróci ten kod?\n```python\nfrom functools import reduce\nwynik = reduce(lambda x, y: x * y, [2, 3, 4])\nprint(wynik)\n```",
-    "odpowiedzi": ["24", "9", "8", "Błąd"],
+    "odpowiedzi": [
+      "24",
+      "9",
+      "8",
+      "Błąd"
+    ],
     "prawidlowa": 0,
     "tlumaczenie": "`reduce` z mnożeniem: `((2*3)*4) = (6*4) = 24`."
   },
@@ -2027,7 +2317,12 @@
     "id": 179,
     "typ": "kod",
     "pytanie": "Co wyświetli ten kod?\n```python\ndef gen():\n    yield 1\n    yield 2\n    yield 3\n\ng = gen()\nprint(next(g))\nprint(next(g))\n```",
-    "odpowiedzi": ["1\\n2", "2\\n3", "[1, 2]", "Błąd"],
+    "odpowiedzi": [
+      "1\\n2",
+      "2\\n3",
+      "[1, 2]",
+      "Błąd"
+    ],
     "prawidlowa": 0,
     "tlumaczenie": "Generator zwraca wartości przez `yield`. Pierwsze `next(g)` zwraca `1`, drugie `next(g)` zwraca `2`."
   },
@@ -2035,7 +2330,12 @@
     "id": 180,
     "typ": "kod",
     "pytanie": "Co zwróci ten kod?\n```python\ndef gen():\n    yield 1\n    yield 2\n\ng = gen()\nprint(list(g))\n```",
-    "odpowiedzi": ["[1, 2]", "<generator>", "Błąd", "None"],
+    "odpowiedzi": [
+      "[1, 2]",
+      "<generator>",
+      "Błąd",
+      "None"
+    ],
     "prawidlowa": 0,
     "tlumaczenie": "Generator `gen()` zwraca wartości 1, 2. `list(g)` konwertuje generator na listę: `[1, 2]`."
   },
@@ -2043,7 +2343,12 @@
     "id": 181,
     "typ": "teoria",
     "pytanie": "Co się stanie gdy wywołamy `next()` na wyczerpanym generatorze?",
-    "odpowiedzi": ["StopIteration", "None", "Błąd", "Zwróci ostatnią wartość"],
+    "odpowiedzi": [
+      "StopIteration",
+      "None",
+      "Błąd",
+      "Zwróci ostatnią wartość"
+    ],
     "prawidlowa": 0,
     "tlumaczenie": "Gdy generator jest wyczerpany (nie ma więcej wartości do zwrócenia), `next()` rzuca wyjątek `StopIteration`. W pętli `for` to jest automatycznie obsługiwane."
   },
@@ -2051,7 +2356,12 @@
     "id": 182,
     "typ": "kod",
     "pytanie": "Co wyświetli ten kod?\n```python\ndef dekorator(func):\n    def wrapper(*args, **kwargs):\n        return func(*args, **kwargs) * 2\n    return wrapper\n\n@dekorator\ndef add(a, b):\n    return a + b\n\nprint(add(3, 4))\n```",
-    "odpowiedzi": ["14", "7", "Błąd", "None"],
+    "odpowiedzi": [
+      "14",
+      "7",
+      "Błąd",
+      "None"
+    ],
     "prawidlowa": 0,
     "tlumaczenie": "Dekorator mnoży wynik funkcji przez 2. `add(3, 4) = 7`, dekorator zwraca `7 * 2 = 14`."
   },
@@ -2059,7 +2369,12 @@
     "id": 183,
     "typ": "teoria",
     "pytanie": "Czy dekorator musi być funkcją?",
-    "odpowiedzi": ["Tak, to funkcja wyższego rzędu", "Nie, może być klasą", "Nie istnieje", "Zależy od wersji"],
+    "odpowiedzi": [
+      "Tak, to funkcja wyższego rzędu",
+      "Nie, może być klasą",
+      "Nie istnieje",
+      "Zależy od wersji"
+    ],
     "prawidlowa": 0,
     "tlumaczenie": "Dekorator to funkcja, która przyjmuje funkcję jako argument i zwraca funkcję. Można też użyć klasy jako dekoratora (implementując `__call__`), ale podstawowo to funkcja."
   },
@@ -2067,7 +2382,12 @@
     "id": 184,
     "typ": "kod",
     "pytanie": "Co zwróci ten kod?\n```python\nclass A:\n    def metoda(self):\n        return \"A\"\n\nclass B(A):\n    def metoda(self):\n        return \"B\"\n\nclass C(B):\n    pass\n\nc = C()\nprint(c.metoda())\n```",
-    "odpowiedzi": ["B", "A", "Błąd", "None"],
+    "odpowiedzi": [
+      "B",
+      "A",
+      "Błąd",
+      "None"
+    ],
     "prawidlowa": 0,
     "tlumaczenie": "MRO wyszukuje metodę od lewej do prawej: `C` → `B` → `A`. Najpierw `C` (brak), potem `B` (ma `metoda()` zwracającą \"B\"). Używa tej z `B`."
   },
@@ -2075,7 +2395,12 @@
     "id": 185,
     "typ": "teoria",
     "pytanie": "Co oznacza MRO (Method Resolution Order)?",
-    "odpowiedzi": ["Kolejność wyszukiwania metod w wielodziedziczeniu", "Metoda rozwiązywania obiektów", "Maksymalny rozmiar obiektu", "Nie istnieje w Pythonie"],
+    "odpowiedzi": [
+      "Kolejność wyszukiwania metod w wielodziedziczeniu",
+      "Metoda rozwiązywania obiektów",
+      "Maksymalny rozmiar obiektu",
+      "Nie istnieje w Pythonie"
+    ],
     "prawidlowa": 0,
     "tlumaczenie": "MRO to algorytm określający kolejność wyszukiwania metod w hierarchii dziedziczenia. W Pythonie 3 używa się algorytmu C3 Linearization. Można sprawdzić przez `Klasa.__mro__`."
   },
@@ -2083,7 +2408,12 @@
     "id": 186,
     "typ": "kod",
     "pytanie": "Co wyświetli ten kod?\n```python\nclass Klasa:\n    def __len__(self):\n        return 5\n\nobj = Klasa()\nprint(len(obj))\n```",
-    "odpowiedzi": ["5", "Błąd", "None", "0"],
+    "odpowiedzi": [
+      "5",
+      "Błąd",
+      "None",
+      "0"
+    ],
     "prawidlowa": 0,
     "tlumaczenie": "`__len__()` definiuje długość obiektu. `len(obj)` wywołuje `obj.__len__()`, zwraca `5`."
   },
@@ -2091,7 +2421,12 @@
     "id": 187,
     "typ": "kod",
     "pytanie": "Co wyświetli ten kod?\n```python\nclass Klasa:\n    def __eq__(self, other):\n        return True\n\na = Klasa()\nb = Klasa()\nprint(a == b)\n```",
-    "odpowiedzi": ["True", "False", "Błąd", "None"],
+    "odpowiedzi": [
+      "True",
+      "False",
+      "Błąd",
+      "None"
+    ],
     "prawidlowa": 0,
     "tlumaczenie": "`__eq__()` definiuje porównanie `==`. `a == b` wywołuje `a.__eq__(b)`, zwraca `True`."
   },
@@ -2099,7 +2434,12 @@
     "id": 188,
     "typ": "kod",
     "pytanie": "Co zwróci ten kod?\n```python\nclass Klasa:\n    def __new__(cls):\n        return super().__new__(cls)\n    def __init__(self):\n        print(\"Init\")\n\nobj = Klasa()\n```",
-    "odpowiedzi": ["Init", "Błąd", "Nic", "Klasa"],
+    "odpowiedzi": [
+      "Init",
+      "Błąd",
+      "Nic",
+      "Klasa"
+    ],
     "prawidlowa": 0,
     "tlumaczenie": "`__new__()` tworzy instancję, `__init__()` ją inicjalizuje. Najpierw wykonuje się `__new__()`, potem `__init__()`. Wyświetla się: \"Init\"."
   },
@@ -2107,7 +2447,12 @@
     "id": 189,
     "typ": "kod",
     "pytanie": "Co wyświetli ten kod?\n```python\nclass Klasa:\n    wartosc = 100\n    def __init__(self, x):\n        self.wartosc = x\n\nobj = Klasa(50)\nprint(obj.wartosc, Klasa.wartosc)\n```",
-    "odpowiedzi": ["50 100", "100 100", "50 50", "Błąd"],
+    "odpowiedzi": [
+      "50 100",
+      "100 100",
+      "50 50",
+      "Błąd"
+    ],
     "prawidlowa": 0,
     "tlumaczenie": "`obj.wartosc = 50` tworzy atrybut instancji, który nadpisuje dostęp do atrybutu klasy dla tej instancji. `Klasa.wartosc = 100` pozostaje bez zmian."
   },
@@ -2115,7 +2460,12 @@
     "id": 190,
     "typ": "kod",
     "pytanie": "Co zwróci ten kod?\n```python\nclass Klasa:\n    @staticmethod\n    def metoda():\n        return 42\n\nobj = Klasa()\nprint(obj.metoda())\n```",
-    "odpowiedzi": ["42", "Błąd - brak self", "None", "Błąd - brak instancji"],
+    "odpowiedzi": [
+      "42",
+      "Błąd - brak self",
+      "None",
+      "Błąd - brak instancji"
+    ],
     "prawidlowa": 0,
     "tlumaczenie": "Metoda statyczna może być wywoływana przez instancję lub klasę. `obj.metoda()` działa i zwraca `42`."
   },
@@ -2123,7 +2473,12 @@
     "id": 191,
     "typ": "kod",
     "pytanie": "Co wyświetli ten kod?\n```python\nclass Klasa:\n    wartosc = 10\n    @classmethod\n    def zwroc(cls):\n        return cls.wartosc\n\nobj = Klasa()\nprint(obj.zwroc())\n```",
-    "odpowiedzi": ["10", "Błąd - brak instancji", "None", "Klasa"],
+    "odpowiedzi": [
+      "10",
+      "Błąd - brak instancji",
+      "None",
+      "Klasa"
+    ],
     "prawidlowa": 0,
     "tlumaczenie": "Metoda klasowa `@classmethod` przyjmuje klasę jako pierwszy argument (`cls`). `cls.wartosc` odwołuje się do atrybutu klasy. `obj.zwroc()` wywołuje metodę i zwraca `10`."
   },
@@ -2131,7 +2486,12 @@
     "id": 192,
     "typ": "kod",
     "pytanie": "Co zwróci ten kod?\n```python\ntry:\n    x = 10 / 0\nexcept Exception as e:\n    print(type(e).__name__)\n```",
-    "odpowiedzi": ["ZeroDivisionError", "Exception", "ArithmeticError", "Error"],
+    "odpowiedzi": [
+      "ZeroDivisionError",
+      "Exception",
+      "ArithmeticError",
+      "Error"
+    ],
     "prawidlowa": 0,
     "tlumaczenie": "`10/0` rzuca `ZeroDivisionError`, który dziedziczy po `ArithmeticError`, który dziedziczy po `Exception`. `except Exception` przechwytuje go, ale typ to `ZeroDivisionError`."
   },
@@ -2139,7 +2499,12 @@
     "id": 193,
     "typ": "kod",
     "pytanie": "Co wyświetli ten kod?\n```python\ntry:\n    raise ValueError(\"Błąd\")\nexcept ValueError as e:\n    print(f\"Wystąpił: {e}\")\n```",
-    "odpowiedzi": ["Wystąpił: Błąd", "ValueError: Błąd", "Brak wyjścia", "SyntaxError"],
+    "odpowiedzi": [
+      "Wystąpił: Błąd",
+      "ValueError: Błąd",
+      "Brak wyjścia",
+      "SyntaxError"
+    ],
     "prawidlowa": 0,
     "tlumaczenie": "`raise ValueError(\"Błąd\")` rzuca wyjątek z komunikatem. `except ValueError as e` przechwytuje go i przypisuje do `e`. Wyświetla się: \"Wystąpił: Błąd\"."
   },
@@ -2147,7 +2512,12 @@
     "id": 194,
     "typ": "teoria",
     "pytanie": "Czy można przechwycić wiele typów wyjątków w jednym `except`?",
-    "odpowiedzi": ["Tak, używając tuple: except (Type1, Type2):", "Nie, tylko jeden typ", "Tylko w Python 3.8+", "Tylko Exception"],
+    "odpowiedzi": [
+      "Tak, używając tuple: except (Type1, Type2):",
+      "Nie, tylko jeden typ",
+      "Tylko w Python 3.8+",
+      "Tylko Exception"
+    ],
     "prawidlowa": 0,
     "tlumaczenie": "Tak, można podać tuple typów wyjątków: `except (ValueError, TypeError) as e:`. Ten blok obsłuży oba typy wyjątków."
   },
@@ -2155,7 +2525,12 @@
     "id": 195,
     "typ": "kod",
     "pytanie": "Co zwróci ten kod?\n```python\ntry:\n    x = int(\"abc\")\nexcept (ValueError, TypeError) as e:\n    print(\"Błąd\")\n```",
-    "odpowiedzi": ["Błąd", "ValueError: invalid literal", "Brak wyjścia", "SyntaxError"],
+    "odpowiedzi": [
+      "Błąd",
+      "ValueError: invalid literal",
+      "Brak wyjścia",
+      "SyntaxError"
+    ],
     "prawidlowa": 0,
     "tlumaczenie": "`int(\"abc\")` rzuca `ValueError`. `except (ValueError, TypeError)` przechwytuje oba typy wyjątków, więc wyświetla się \"Błąd\"."
   },
@@ -2163,7 +2538,12 @@
     "id": 196,
     "typ": "kod",
     "pytanie": "Co wyświetli ten kod?\n```python\nimport json\n\nx = json.loads('true')\nprint(type(x))\n```",
-    "odpowiedzi": ["<class 'bool'>", "<class 'str'>", "<class 'int'>", "Błąd"],
+    "odpowiedzi": [
+      "<class 'bool'>",
+      "<class 'str'>",
+      "<class 'int'>",
+      "Błąd"
+    ],
     "prawidlowa": 0,
     "tlumaczenie": "JSON `true` jest konwertowany na Python `True` (bool). `json.loads('true')` zwraca `True`, typ: `bool`."
   },
@@ -2171,7 +2551,12 @@
     "id": 197,
     "typ": "kod",
     "pytanie": "Co zwróci ten kod?\n```python\nimport json\n\nx = json.loads('[1, 2, 3]')\nprint(type(x))\n```",
-    "odpowiedzi": ["<class 'list'>", "<class 'str'>", "<class 'dict'>", "Błąd"],
+    "odpowiedzi": [
+      "<class 'list'>",
+      "<class 'str'>",
+      "<class 'dict'>",
+      "Błąd"
+    ],
     "prawidlowa": 0,
     "tlumaczenie": "JSON array `[]` jest konwertowany na Python `list`. `json.loads('[1, 2, 3]')` zwraca `[1, 2, 3]`, typ: `list`."
   },
@@ -2179,7 +2564,12 @@
     "id": 198,
     "typ": "kod",
     "pytanie": "Co wyświetli ten kod?\n```python\nimport json\n\nx = json.dumps([1, 2, 3])\nprint(type(x))\n```",
-    "odpowiedzi": ["<class 'str'>", "<class 'list'>", "<class 'json'>", "Błąd"],
+    "odpowiedzi": [
+      "<class 'str'>",
+      "<class 'list'>",
+      "<class 'json'>",
+      "Błąd"
+    ],
     "prawidlowa": 0,
     "tlumaczenie": "`json.dumps()` konwertuje obiekt Pythona do stringa JSON. Lista `[1,2,3]` staje się string `'[1, 2, 3]'`. Typ: `str`."
   },
@@ -2187,7 +2577,12 @@
     "id": 199,
     "typ": "kod",
     "pytanie": "Co zwróci ten kod?\n```python\nimport asyncio\n\nasync def fun():\n    return 100\n\nresult = asyncio.run(fun())\nprint(result)\n```",
-    "odpowiedzi": ["100", "None", "<coroutine>", "Błąd"],
+    "odpowiedzi": [
+      "100",
+      "None",
+      "<coroutine>",
+      "Błąd"
+    ],
     "prawidlowa": 0,
     "tlumaczenie": "`asyncio.run()` uruchamia funkcję asynchroniczną i zwraca jej wynik. `fun()` zwraca `100`, więc `result = 100`."
   },
@@ -2195,7 +2590,12 @@
     "id": 200,
     "typ": "kod",
     "pytanie": "Co wyświetli ten kod?\n```python\nimport asyncio\n\nasync def zadanie():\n    print(\"Start\")\n    await asyncio.sleep(0.1)\n    print(\"Koniec\")\n\nasyncio.run(zadanie())\n```",
-    "odpowiedzi": ["Start\\n(potem) Koniec", "Wyświetli tylko: Start", "Błąd", "Wyświetli od razu: Start\\nKoniec"],
+    "odpowiedzi": [
+      "Start\\n(potem) Koniec",
+      "Wyświetli tylko: Start",
+      "Błąd",
+      "Wyświetli od razu: Start\\nKoniec"
+    ],
     "prawidlowa": 0,
     "tlumaczenie": "`asyncio.run()` uruchamia funkcję asynchroniczną. `await asyncio.sleep(0.1)` czeka 0.1 sekundy. Wyświetla: \"Start\", potem po 0.1 sek \"Koniec\"."
   },
@@ -2203,7 +2603,12 @@
     "id": 201,
     "typ": "kod",
     "pytanie": "Co zwróci ten kod?\n```python\nwynik = {x: x**2 for x in range(3)}\nprint(type(wynik))\n```",
-    "odpowiedzi": ["<class 'dict'>", "<class 'list'>", "<class 'set'>", "Błąd"],
+    "odpowiedzi": [
+      "<class 'dict'>",
+      "<class 'list'>",
+      "<class 'set'>",
+      "Błąd"
+    ],
     "prawidlowa": 0,
     "tlumaczenie": "To dict comprehension, nie list comprehension. Tworzy słownik: `{0: 0, 1: 1, 2: 4}`. Typ: `dict`."
   },
@@ -2211,7 +2616,12 @@
     "id": 202,
     "typ": "kod",
     "pytanie": "Co wyświetli ten kod?\n```python\nwynik = {x for x in \"hello\"}\nprint(wynik)\n```",
-    "odpowiedzi": ["{'h', 'e', 'l', 'o'}", "{'h', 'e', 'l', 'l', 'o'}", "{'hello'}", "Błąd"],
+    "odpowiedzi": [
+      "{'h', 'e', 'l', 'o'}",
+      "{'h', 'e', 'l', 'l', 'o'}",
+      "{'hello'}",
+      "Błąd"
+    ],
     "prawidlowa": 0,
     "tlumaczenie": "To set comprehension. Iteruje przez znaki \"hello\" i tworzy zbiór: `{'h', 'e', 'l', 'o'}` (duplikaty są usuwane)."
   },
@@ -2219,7 +2629,12 @@
     "id": 203,
     "typ": "kod",
     "pytanie": "Co zwróci ten kod?\n```python\nimport numpy as np\n\narr = np.array([1, 2, 3, 4])\nprint(arr.sum())\n```",
-    "odpowiedzi": ["10", "4", "[1, 2, 3, 4]", "Błąd"],
+    "odpowiedzi": [
+      "10",
+      "4",
+      "[1, 2, 3, 4]",
+      "Błąd"
+    ],
     "prawidlowa": 0,
     "tlumaczenie": "`.sum()` sumuje wszystkie elementy tablicy. `arr.sum() = 1 + 2 + 3 + 4 = 10`."
   },
@@ -2227,7 +2642,12 @@
     "id": 204,
     "typ": "kod",
     "pytanie": "Co wyświetli ten kod?\n```python\nimport numpy as np\n\narr = np.array([1, 2, 3, 4])\nprint(arr[::2])\n```",
-    "odpowiedzi": ["[1 3]", "[1 2]", "[2 4]", "Błąd"],
+    "odpowiedzi": [
+      "[1 3]",
+      "[1 2]",
+      "[2 4]",
+      "Błąd"
+    ],
     "prawidlowa": 0,
     "tlumaczenie": "Slice `[::2]` oznacza co drugi element od początku: `[1, 2, 3, 4]` → `[1, 3]`."
   },
@@ -2235,7 +2655,12 @@
     "id": 205,
     "typ": "kod",
     "pytanie": "Co zwróci ten kod?\n```python\nimport numpy as np\n\narr = np.array([1, 2, 3])\nprint(arr.shape)\n```",
-    "odpowiedzi": ["(3,)", "(3)", "(1, 3)", "Błąd"],
+    "odpowiedzi": [
+      "(3,)",
+      "(3)",
+      "(1, 3)",
+      "Błąd"
+    ],
     "prawidlowa": 0,
     "tlumaczenie": "Tablica 1D z 3 elementami ma kształt `(3,)` - tuple z jednym elementem. `(3)` to liczba, `(3,)` to tuple."
   },
@@ -2243,7 +2668,12 @@
     "id": 206,
     "typ": "teoria",
     "pytanie": "Co to jest duck typing?",
-    "odpowiedzi": ["Filozofia: jeśli wygląda jak kaczka i kwacze jak kaczka, to kaczka", "Typ danych", "Błąd składni", "Nie istnieje"],
+    "odpowiedzi": [
+      "Filozofia: jeśli wygląda jak kaczka i kwacze jak kaczka, to kaczka",
+      "Typ danych",
+      "Błąd składni",
+      "Nie istnieje"
+    ],
     "prawidlowa": 0,
     "tlumaczenie": "Duck typing to filozofia Pythona: typ obiektu jest określany przez jego metody/atrybuty, nie przez deklarację klasy. Jeśli obiekt ma metodę `quack()`, może być użyty jako kaczka."
   },
@@ -2251,7 +2681,12 @@
     "id": 207,
     "typ": "teoria",
     "pytanie": "Co to jest PEP?",
-    "odpowiedzi": ["Python Enhancement Proposal - propozycja ulepszeń Pythona", "Paczka Pythona", "Funkcja", "Błąd"],
+    "odpowiedzi": [
+      "Python Enhancement Proposal - propozycja ulepszeń Pythona",
+      "Paczka Pythona",
+      "Funkcja",
+      "Błąd"
+    ],
     "prawidlowa": 0,
     "tlumaczenie": "PEP (Python Enhancement Proposal) to dokument opisujący propozycje zmian w języku Python. Najsłynniejsze to PEP 8 (styl kodu) i PEP 20 (Zen of Python)."
   },
@@ -2259,7 +2694,12 @@
     "id": 208,
     "typ": "teoria",
     "pytanie": "Co to jest docstring?",
-    "odpowiedzi": ["Dokumentacja funkcji/klasy w pierwszej linii", "Typ danych", "Funkcja", "Błąd"],
+    "odpowiedzi": [
+      "Dokumentacja funkcji/klasy w pierwszej linii",
+      "Typ danych",
+      "Funkcja",
+      "Błąd"
+    ],
     "prawidlowa": 0,
     "tlumaczenie": "Docstring to string dokumentujący funkcję, klasę lub moduł. Umieszczany w pierwszej linii po definicji (trzy cudzysłowy). Dostępny przez `obj.__doc__`."
   },
@@ -2267,7 +2707,12 @@
     "id": 209,
     "typ": "kod",
     "pytanie": "Co zwróci ten kod?\n```python\ndef fun():\n    \"\"\"To jest docstring\"\"\"\n    pass\n\nprint(fun.__doc__)\n```",
-    "odpowiedzi": ["To jest docstring", "None", "Błąd", "fun"],
+    "odpowiedzi": [
+      "To jest docstring",
+      "None",
+      "Błąd",
+      "fun"
+    ],
     "prawidlowa": 0,
     "tlumaczenie": "Docstring to dokumentacja funkcji w pierwszej linii. Dostępny przez `fun.__doc__`. Zwraca string z dokumentacją."
   },
@@ -2275,7 +2720,12 @@
     "id": 210,
     "typ": "teoria",
     "pytanie": "Co to jest iterator w Pythonie?",
-    "odpowiedzi": ["Obiekt, który zwraca kolejne elementy", "Lista", "Funkcja", "Klasa"],
+    "odpowiedzi": [
+      "Obiekt, który zwraca kolejne elementy",
+      "Lista",
+      "Funkcja",
+      "Klasa"
+    ],
     "prawidlowa": 0,
     "tlumaczenie": "Iterator to obiekt implementujący `__iter__()` i `__next__()`. Używany w pętlach `for`. `iter()` tworzy iterator, `next()` zwraca kolejne elementy."
   },
@@ -2283,7 +2733,12 @@
     "id": 211,
     "typ": "kod",
     "pytanie": "Co zwróci ten kod?\n```python\nx = iter([1, 2, 3])\nprint(next(x))\nprint(next(x))\n```",
-    "odpowiedzi": ["1\\n2", "2\\n3", "[1, 2]", "Błąd"],
+    "odpowiedzi": [
+      "1\\n2",
+      "2\\n3",
+      "[1, 2]",
+      "Błąd"
+    ],
     "prawidlowa": 0,
     "tlumaczenie": "`iter()` tworzy iterator z listy. Pierwsze `next(x)` zwraca `1`, drugie `next(x)` zwraca `2`."
   },
@@ -2291,7 +2746,12 @@
     "id": 212,
     "typ": "kod",
     "pytanie": "Co wyświetli ten kod?\n```python\nimport threading\nimport time\n\ndef zadanie():\n    time.sleep(1)\n    print(\"Koniec\")\n\nt = threading.Thread(target=zadanie)\nt.start()\nprint(\"Start\")\n```",
-    "odpowiedzi": ["Wyświetli: Start\\n(potem) Koniec", "Wyświetli tylko: Start", "Wyświetli tylko: Koniec", "Błąd"],
+    "odpowiedzi": [
+      "Wyświetli: Start\\n(potem) Koniec",
+      "Wyświetli tylko: Start",
+      "Wyświetli tylko: Koniec",
+      "Błąd"
+    ],
     "prawidlowa": 0,
     "tlumaczenie": "`start()` uruchamia wątek, ale nie czeka. Najpierw wykona się `print(\"Start\")`, potem po 1 sekundzie `print(\"Koniec\")` z wątku. Bez `join()` kolejność może być różna."
   },
@@ -2299,7 +2759,12 @@
     "id": 213,
     "typ": "teoria",
     "pytanie": "Co oznacza `join()` w threading?",
-    "odpowiedzi": ["Czeka na zakończenie wątku", "Dołącza wątek do głównego", "Przerywa wątek", "Nie istnieje"],
+    "odpowiedzi": [
+      "Czeka na zakończenie wątku",
+      "Dołącza wątek do głównego",
+      "Przerywa wątek",
+      "Nie istnieje"
+    ],
     "prawidlowa": 0,
     "tlumaczenie": "`thread.join()` blokuje wykonanie głównego wątku aż do zakończenia wywołanego wątku. Pozwala synchronizować wątki."
   },
@@ -2307,7 +2772,12 @@
     "id": 214,
     "typ": "teoria",
     "pytanie": "Co to jest race condition?",
-    "odpowiedzi": ["Sytuacja gdy wątki konkurują o dostęp do zasobów", "Błąd składni", "Typ wyjątku", "Nie istnieje"],
+    "odpowiedzi": [
+      "Sytuacja gdy wątki konkurują o dostęp do zasobów",
+      "Błąd składni",
+      "Typ wyjątku",
+      "Nie istnieje"
+    ],
     "prawidlowa": 0,
     "tlumaczenie": "Race condition to sytuacja, gdy wynik zależy od kolejności wykonania wątków. Występuje gdy wiele wątków jednocześnie modyfikuje współdzielone dane. Trzeba użyć blokad (`Lock`)."
   },
@@ -2315,7 +2785,12 @@
     "id": 215,
     "typ": "teoria",
     "pytanie": "Do czego służy `Lock` w threading?",
-    "odpowiedzi": ["Do synchronizacji dostępu do współdzielonych zasobów", "Do blokowania plików", "Do zamykania wątków", "Nie istnieje"],
+    "odpowiedzi": [
+      "Do synchronizacji dostępu do współdzielonych zasobów",
+      "Do blokowania plików",
+      "Do zamykania wątków",
+      "Nie istnieje"
+    ],
     "prawidlowa": 0,
     "tlumaczenie": "`Lock` (blokada) służy do synchronizacji wątków, zapewniając że tylko jeden wątek na raz wykonuje krytyczną sekcję kodu. Zapobiega race conditions."
   },
@@ -2323,7 +2798,12 @@
     "id": 216,
     "typ": "teoria",
     "pytanie": "Co oznacza `SOCK_STREAM` w socket?",
-    "odpowiedzi": ["Protokół TCP", "Protokół UDP", "Protokół HTTP", "Nie istnieje"],
+    "odpowiedzi": [
+      "Protokół TCP",
+      "Protokół UDP",
+      "Protokół HTTP",
+      "Nie istnieje"
+    ],
     "prawidlowa": 0,
     "tlumaczenie": "`SOCK_STREAM` to protokół TCP (połączeniowy, niezawodny). `SOCK_DGRAM` to UDP (bezpołączeniowy)."
   },
@@ -2331,7 +2811,12 @@
     "id": 217,
     "typ": "teoria",
     "pytanie": "Co oznacza `AF_INET6` w socket?",
-    "odpowiedzi": ["Rodzina adresów IPv6", "Protokół IPv4", "Tryb binarny", "Nie istnieje"],
+    "odpowiedzi": [
+      "Rodzina adresów IPv6",
+      "Protokół IPv4",
+      "Tryb binarny",
+      "Nie istnieje"
+    ],
     "prawidlowa": 0,
     "tlumaczenie": "`AF_INET6` to rodzina adresów IPv6 (16 bajtów, np. 2001:0db8::1). `AF_INET` to IPv4 (4 bajty, np. 127.0.0.1)."
   },
@@ -2339,7 +2824,12 @@
     "id": 218,
     "typ": "teoria",
     "pytanie": "Co robi `listen()` w socket?",
-    "odpowiedzi": ["Rozpoczyna nasłuchiwanie połączeń", "Wysyła dane", "Zamyka socket", "Akceptuje połączenie"],
+    "odpowiedzi": [
+      "Rozpoczyna nasłuchiwanie połączeń",
+      "Wysyła dane",
+      "Zamyka socket",
+      "Akceptuje połączenie"
+    ],
     "prawidlowa": 0,
     "tlumaczenie": "`listen(backlog)` ustawia socket w tryb nasłuchiwania, gotowy do akceptowania połączeń. `backlog` określa maksymalną liczbę połączeń w kolejce."
   },
@@ -2347,7 +2837,12 @@
     "id": 219,
     "typ": "kod",
     "pytanie": "Co zwróci ten kod?\n```python\nimport socket\n\ns = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)\nprint(type(s))\n```",
-    "odpowiedzi": ["<class 'socket.socket'>", "Błąd", "<class 'SOCK_DGRAM'>", "None"],
+    "odpowiedzi": [
+      "<class 'socket.socket'>",
+      "Błąd",
+      "<class 'SOCK_DGRAM'>",
+      "None"
+    ],
     "prawidlowa": 0,
     "tlumaczenie": "`socket.socket()` tworzy obiekt typu `socket`, niezależnie od rodzaju (TCP/UDP). Typ: `<class 'socket.socket'>`."
   },
@@ -2355,7 +2850,12 @@
     "id": 220,
     "typ": "teoria",
     "pytanie": "Który framework webowy w Pythonie jest większy i pełniejszy?",
-    "odpowiedzi": ["Django", "Flask", "Oba są takie same", "Nie ma większego"],
+    "odpowiedzi": [
+      "Django",
+      "Flask",
+      "Oba są takie same",
+      "Nie ma większego"
+    ],
     "prawidlowa": 0,
     "tlumaczenie": "Django to pełny framework z ORM, panel administracyjnym, autentykacją. Flask to mikro-framework, minimalny, wymaga więcej ręcznej konfiguracji."
   },
@@ -2363,7 +2863,12 @@
     "id": 221,
     "typ": "kod",
     "pytanie": "Co się stanie?\n```python\nfrom flask import Flask\n\napp = Flask(__name__)\n\n@app.route(\"/user/<name>\")\ndef user(name):\n    return f\"Hello {name}\"\n```",
-    "odpowiedzi": ["Definiuje trasę z parametrem name", "Błąd składni", "Nic nie robi", "Uruchamia serwer"],
+    "odpowiedzi": [
+      "Definiuje trasę z parametrem name",
+      "Błąd składni",
+      "Nic nie robi",
+      "Uruchamia serwer"
+    ],
     "prawidlowa": 0,
     "tlumaczenie": "`@app.route(\"/user/<name>\")` definiuje trasę z parametrem URL. `<name>` to dynamiczny parametr, przekazywany do funkcji `user(name)`."
   },
@@ -2371,7 +2876,12 @@
     "id": 222,
     "typ": "teoria",
     "pytanie": "Co to jest ORM?",
-    "odpowiedzi": ["Object-Relational Mapping - mapowanie obiektów na bazę danych", "Obsługa requestów", "Metoda routing", "Nie istnieje w Flask"],
+    "odpowiedzi": [
+      "Object-Relational Mapping - mapowanie obiektów na bazę danych",
+      "Obsługa requestów",
+      "Metoda routing",
+      "Nie istnieje w Flask"
+    ],
     "prawidlowa": 0,
     "tlumaczenie": "ORM (Object-Relational Mapping) to technika mapowania obiektów programowania na tabele bazy danych. Django ma wbudowany ORM, Flask używa zewnętrznych bibliotek jak SQLAlchemy."
   },
@@ -2379,7 +2889,12 @@
     "id": 223,
     "typ": "kod",
     "pytanie": "Co się stanie?\n```python\nwith open(\"test.txt\", \"x\") as f:\n    f.write(\"Hello\")\n```\n(Jeśli plik już istnieje)",
-    "odpowiedzi": ["FileExistsError", "Nadpisze plik", "Dopisze do pliku", "Nic nie zrobi"],
+    "odpowiedzi": [
+      "FileExistsError",
+      "Nadpisze plik",
+      "Dopisze do pliku",
+      "Nic nie zrobi"
+    ],
     "prawidlowa": 0,
     "tlumaczenie": "Tryb `\"x\"` (exclusive) tworzy nowy plik tylko jeśli nie istnieje. Jeśli plik już istnieje, rzuca `FileExistsError`."
   },
@@ -2387,7 +2902,12 @@
     "id": 224,
     "typ": "teoria",
     "pytanie": "Jaki tryb otwarcia pliku tworzy nowy plik, ale rzuca błąd jeśli plik już istnieje?",
-    "odpowiedzi": ["x (exclusive)", "w (write)", "a (append)", "r (read)"],
+    "odpowiedzi": [
+      "x (exclusive)",
+      "w (write)",
+      "a (append)",
+      "r (read)"
+    ],
     "prawidlowa": 0,
     "tlumaczenie": "Tryb `\"x\"` (exclusive) tworzy nowy plik tylko jeśli nie istnieje. Jeśli plik istnieje, rzuca `FileExistsError`. `\"w\"` nadpisuje istniejący plik."
   },
@@ -2395,15 +2915,25 @@
     "id": 225,
     "typ": "kod",
     "pytanie": "Co się stanie?\n```python\nwith open(\"test.txt\", \"w\", encoding=\"utf-8\") as f:\n    f.write(\"Hello 世界\")\n```",
-    "odpowiedzi": ["Zapisze tekst z polskimi znakami do pliku", "Błąd - nie obsługuje UTF-8", "Zapisze tylko \"Hello\"", "Błąd składni"],
-    "prawidlowa": 0,
+    "odpowiedzi": [
+      "Zapisze tekst z polskimi znakami do pliku",
+      "Błąd - nie obsługuje UTF-8",
+      "Zapisze tylko \"Hello\"",
+      "Błąd składni"
+    ],
+    "prawidlowa": 1,
     "tlumaczenie": "`encoding=\"utf-8\"` określa kodowanie pliku. UTF-8 obsługuje wszystkie znaki Unicode, więc \"Hello 世界\" zostanie poprawnie zapisane."
   },
   {
     "id": 226,
     "typ": "kod",
     "pytanie": "Co się stanie?\n```python\nimport unittest\n\nclass Test(unittest.TestCase):\n    def test(self):\n        self.assertNotEqual(2 + 2, 5)\n\nunittest.main()\n```",
-    "odpowiedzi": ["Test przejdzie", "Test się nie powiedzie", "Błąd składni", "Nic nie zrobi"],
+    "odpowiedzi": [
+      "Test przejdzie",
+      "Test się nie powiedzie",
+      "Błąd składni",
+      "Nic nie zrobi"
+    ],
     "prawidlowa": 0,
     "tlumaczenie": "`assertNotEqual(2+2, 5)` sprawdza czy `4 != 5`, co jest `True`. Test przechodzi."
   },
@@ -2411,7 +2941,12 @@
     "id": 227,
     "typ": "teoria",
     "pytanie": "Która metoda unittest sprawdza czy funkcja rzuca wyjątek?",
-    "odpowiedzi": ["assertRaises()", "assertError()", "assertException()", "assertFail()"],
+    "odpowiedzi": [
+      "assertRaises()",
+      "assertError()",
+      "assertException()",
+      "assertFail()"
+    ],
     "prawidlowa": 0,
     "tlumaczenie": "`self.assertRaises(ErrorType, function, *args)` sprawdza czy funkcja rzuca określony wyjątek. Przykład: `self.assertRaises(ValueError, int, 'abc')`."
   },
@@ -2419,7 +2954,12 @@
     "id": 228,
     "typ": "teoria",
     "pytanie": "Co robią metody `setUp()` i `tearDown()` w unittest?",
-    "odpowiedzi": ["Wykonują się przed i po każdym teście", "Tworzą i usuwają testy", "Nie istnieją", "Tylko przed pierwszym testem"],
+    "odpowiedzi": [
+      "Wykonują się przed i po każdym teście",
+      "Tworzą i usuwają testy",
+      "Nie istnieją",
+      "Tylko przed pierwszym testem"
+    ],
     "prawidlowa": 0,
     "tlumaczenie": "`setUp()` wykonuje się przed każdym testem (przygotowanie danych). `tearDown()` wykonuje się po każdym teście (sprzątanie). Pozwalają na wspólne przygotowanie dla wielu testów."
   },
@@ -2427,7 +2967,12 @@
     "id": 229,
     "typ": "teoria",
     "pytanie": "Co to jest PYTHONPATH?",
-    "odpowiedzi": ["Zmienna środowiskowa z katalogami szukania modułów", "Moduł Pythona", "Funkcja w sys", "Nie istnieje"],
+    "odpowiedzi": [
+      "Zmienna środowiskowa z katalogami szukania modułów",
+      "Moduł Pythona",
+      "Funkcja w sys",
+      "Nie istnieje"
+    ],
     "prawidlowa": 0,
     "tlumaczenie": "PYTHONPATH to zmienna środowiskowa zawierająca listę katalogów, które Python przeszukuje podczas importowania modułów. Domyślnie zawiera katalog bieżący i standardowe lokalizacje."
   },
@@ -2435,7 +2980,12 @@
     "id": 230,
     "typ": "kod",
     "pytanie": "Co zwróci ten kod?\n```python\nimport sys\nprint(type(sys.path))\n```",
-    "odpowiedzi": ["<class 'list'>", "<class 'dict'>", "<class 'str'>", "Błąd"],
+    "odpowiedzi": [
+      "<class 'list'>",
+      "<class 'dict'>",
+      "<class 'str'>",
+      "Błąd"
+    ],
     "prawidlowa": 0,
     "tlumaczenie": "`sys.path` to lista katalogów, w których Python szuka modułów. Typ: `list`."
   },
@@ -2443,7 +2993,12 @@
     "id": 231,
     "typ": "teoria",
     "pytanie": "Co się stanie gdy importujemy ten sam moduł dwa razy?",
-    "odpowiedzi": ["Moduł zostanie zaimportowany tylko raz", "Zostanie zaimportowany dwa razy", "Błąd", "Zależy od modułu"],
+    "odpowiedzi": [
+      "Moduł zostanie zaimportowany tylko raz",
+      "Zostanie zaimportowany dwa razy",
+      "Błąd",
+      "Zależy od modułu"
+    ],
     "prawidlowa": 0,
     "tlumaczenie": "Python cachuje zaimportowane moduły. Drugi `import` po prostu zwraca referencję do już załadowanego modułu, nie wykonuje kodu ponownie."
   },
@@ -2451,7 +3006,12 @@
     "id": 232,
     "typ": "kod",
     "pytanie": "Co zwróci ten kod?\n```python\nfrom math import sqrt, pi\nprint(sqrt(9))\n```",
-    "odpowiedzi": ["3.0", "3", "Błąd", "math.sqrt(9)"],
+    "odpowiedzi": [
+      "3.0",
+      "3",
+      "Błąd",
+      "math.sqrt(9)"
+    ],
     "prawidlowa": 0,
     "tlumaczenie": "`from math import sqrt` importuje funkcję bezpośrednio. `sqrt(9)` zwraca `3.0` (float), nie trzeba prefiksu `math.`."
   },
@@ -2459,7 +3019,12 @@
     "id": 233,
     "typ": "kod",
     "pytanie": "Co wyświetli ten kod?\n```python\nimport math as m\nprint(m.pi)\n```",
-    "odpowiedzi": ["3.141592653589793", "pi", "Błąd", "None"],
+    "odpowiedzi": [
+      "3.141592653589793",
+      "pi",
+      "Błąd",
+      "None"
+    ],
     "prawidlowa": 0,
     "tlumaczenie": "`import math as m` importuje moduł `math` pod aliasem `m`. `m.pi` to stała matematyczna π."
   },
@@ -2467,7 +3032,12 @@
     "id": 234,
     "typ": "kod",
     "pytanie": "Co zwróci ten kod?\n```python\nx = [1, 2, 3]\nprint(3 in x)\n```",
-    "odpowiedzi": ["True", "False", "Błąd", "None"],
+    "odpowiedzi": [
+      "True",
+      "False",
+      "Błąd",
+      "None"
+    ],
     "prawidlowa": 0,
     "tlumaczenie": "Operator `in` sprawdza czy element jest w sekwencji. `3 in [1, 2, 3] = True` (3 jest w liście)."
   },
@@ -2475,7 +3045,12 @@
     "id": 235,
     "typ": "kod",
     "pytanie": "Co wyświetli ten kod?\n```python\nx = \"hello\"\nprint('l' in x)\n```",
-    "odpowiedzi": ["True", "False", "Błąd", "None"],
+    "odpowiedzi": [
+      "True",
+      "False",
+      "Błąd",
+      "None"
+    ],
     "prawidlowa": 0,
     "tlumaczenie": "Operator `in` sprawdza czy substring jest w stringu. `'l' in \"hello\" = True` ('l' jest w stringu)."
   },
@@ -2483,7 +3058,12 @@
     "id": 236,
     "typ": "kod",
     "pytanie": "Co zwróci ten kod?\n```python\nx = [1, 2, 3]\ny = x.copy()\nx.append(4)\nprint(y)\n```",
-    "odpowiedzi": ["[1, 2, 3]", "[1, 2, 3, 4]", "Błąd", "[4]"],
+    "odpowiedzi": [
+      "[1, 2, 3]",
+      "[1, 2, 3, 4]",
+      "Błąd",
+      "[4]"
+    ],
     "prawidlowa": 0,
     "tlumaczenie": "`.copy()` tworzy płytką kopię listy. `x.append(4)` modyfikuje tylko `x`, `y` pozostaje `[1, 2, 3]`."
   },
@@ -2491,7 +3071,12 @@
     "id": 237,
     "typ": "kod",
     "pytanie": "Co wyświetli ten kod?\n```python\nx = [1, 2, 3]\nprint(x * 2)\n```",
-    "odpowiedzi": ["[1, 2, 3, 1, 2, 3]", "[2, 4, 6]", "[1, 2, 3]", "Błąd"],
+    "odpowiedzi": [
+      "[1, 2, 3, 1, 2, 3]",
+      "[2, 4, 6]",
+      "[1, 2, 3]",
+      "Błąd"
+    ],
     "prawidlowa": 0,
     "tlumaczenie": "Operator `*` na listach powiela listę. `[1, 2, 3] * 2 = [1, 2, 3, 1, 2, 3]`."
   },
@@ -2499,7 +3084,12 @@
     "id": 238,
     "typ": "kod",
     "pytanie": "Co zwróci ten kod?\n```python\nx = \"hello\"\nprint(x * 2)\n```",
-    "odpowiedzi": ["hellohello", "hello hello", "he", "Błąd"],
+    "odpowiedzi": [
+      "hellohello",
+      "hello hello",
+      "he",
+      "Błąd"
+    ],
     "prawidlowa": 0,
     "tlumaczenie": "Operator `*` na stringach powiela string. `\"hello\" * 2 = \"hellohello\"`."
   },
@@ -2507,7 +3097,12 @@
     "id": 239,
     "typ": "kod",
     "pytanie": "Co wyświetli ten kod?\n```python\nx = [1, 2, 3]\nprint(list(reversed(x)))\n```",
-    "odpowiedzi": ["[3, 2, 1]", "[1, 2, 3]", "None", "Błąd"],
+    "odpowiedzi": [
+      "[3, 2, 1]",
+      "[1, 2, 3]",
+      "None",
+      "Błąd"
+    ],
     "prawidlowa": 0,
     "tlumaczenie": "`reversed()` zwraca iterator z odwróconymi elementami. `list(reversed([1, 2, 3])) = [3, 2, 1]`."
   },
@@ -2515,9 +3110,13 @@
     "id": 240,
     "typ": "kod",
     "pytanie": "Co zwróci ten kod?\n```python\nx = [1, 2, 3]\nprint(x[0:2])\n```",
-    "odpowiedzi": ["[1, 2]", "[1, 2, 3]", "[2, 3]", "Błąd"],
-    "prawidlowa": 0,
+    "odpowiedzi": [
+      "[1, 2]",
+      "[1, 2, 3]",
+      "[2, 3]",
+      "Błąd"
+    ],
+    "prawidlowa": 1,
     "tlumaczenie": "Slice `[0:2]` zwraca elementy od indeksu 0 (włącznie) do 2 (wyłącznie). `[1, 2, 3][0:2] = [1, 2]`."
   }
 ]
-
